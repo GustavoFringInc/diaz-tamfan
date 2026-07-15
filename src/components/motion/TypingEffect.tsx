@@ -67,13 +67,13 @@ export default function TypingEffect({
   return (
     <span className={className}>
       {displayText}
-      <motion.span
-        animate={{ opacity: [1, 0] }}
-        transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
-        className="text-accent ml-0.5"
-      >
-        |
-      </motion.span>
+        <motion.span
+          animate={{ opacity: [1, 0] }}
+          transition={{ duration: 0.8, repeat: Infinity, repeatType: "reverse" }}
+          className="text-accent ml-0.5 inline-block"
+        >
+          |
+        </motion.span>
     </span>
   );
 }

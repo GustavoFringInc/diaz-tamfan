@@ -4,6 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import RevealText from "@/components/motion/RevealText";
+import SectionLabel from "@/components/ui/SectionLabel";
 import { projects } from "@/data/projects";
 import { ExternalLink } from "lucide-react";
 
@@ -11,76 +12,88 @@ export default function ProjectsPage() {
   return (
     <SmoothScroll>
       <Navbar />
-      <main className="pt-16">
-        <section className="section-padding px-6">
-          <div className="max-w-6xl mx-auto">
+      <main className="pt-14">
+        <section className="section-spacing px-6">
+          <div className="max-w-5xl mx-auto">
+            <SectionLabel number="A" label="Semua Project" />
+
             <RevealText
               as="h1"
-              className="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4"
+              className="font-editorial text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.05]"
             >
-              Projects
+              Kalau penasaran saya lagi sibuk ngapain akhir-akhir ini,{" "}
+              <span className="italic text-accent">mungkin beberapa project di bawah ini bisa menjawab</span>.
             </RevealText>
-            <RevealText delay={0.1} className="text-text-secondary mb-16 max-w-2xl">
+            <RevealText delay={0.1} className="text-text-secondary mb-20 max-w-2xl">
               <p>
-                Tiap project mulai dari pertanyaan. Ini jawaban-jawaban yang udah 
-                aku bangun sejauh ini — produk, eksperimen, dan sistem yang explore 
-                apa yang bisa dilakuin AI, desain, dan kode bareng-bareng.
+                Tiap project mulai dari pertanyaan — bukan dari teknologi. Ini jawaban-jawaban 
+                yang udah aku bangun sejauh ini. Ada yang masih jalan, ada yang eksperimen, 
+                ada yang udah selesai.
               </p>
             </RevealText>
 
-            <div className="space-y-16">
+            <div className="space-y-1">
               {projects.map((project, i) => (
-                <RevealText key={project.slug} delay={0.05 * i}>
+                <RevealText key={project.slug} delay={0.04 * i}>
                   <article
                     id={project.slug}
-                    className="grid md:grid-cols-3 gap-8 p-8 border border-border-subtle rounded-md bg-bg-surface hover:bg-bg-elevated transition-colors"
+                    className="group grid md:grid-cols-12 gap-6 py-10 border-b border-border-subtle first:border-t hover:bg-bg-surface/30 transition-colors px-4 -mx-4 rounded-sm"
                   >
-                    <div className="md:col-span-1">
-                      <span className="text-xs font-mono uppercase tracking-widest text-accent mb-2 block">
-                        {project.category} · {project.year}
-                      </span>
-                      <h2 className="font-display text-2xl font-bold mb-2">
+                    {/* Left meta */}
+                    <div className="md:col-span-3">
+                      <div className="flex items-center gap-2 mb-2">
+                        <span className="font-mono text-[10px] text-blueprint/60">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <span className="w-1 h-1 rounded-full bg-border" />
+                        <span className="font-mono text-[10px] text-blueprint/60 uppercase tracking-wider">
+                          {project.category}
+                        </span>
+                      </div>
+                      <h2 className="font-display text-2xl font-bold group-hover:text-accent transition-colors">
                         {project.title}
                       </h2>
-                      <div className="flex items-center gap-2 mb-4">
+                      <div className="flex items-center gap-2 mt-2">
                         <span
-                          className={`text-xs px-2 py-0.5 rounded-full ${
+                          className={`text-[10px] font-mono px-2 py-0.5 rounded-sm ${
                             project.status === "active"
-                              ? "bg-green-500/10 text-green-400"
+                              ? "bg-green-500/10 text-green-700"
                               : project.status === "experiment"
-                              ? "bg-amber-500/10 text-amber-400"
-                              : "bg-blue-500/10 text-blue-400"
+                              ? "bg-amber-500/10 text-amber-700"
+                              : "bg-blue-500/10 text-blue-700"
                           }`}
                         >
                           {project.status === "active" ? "aktif" : project.status === "experiment" ? "eksperimen" : "selesai"}
                         </span>
+                        <span className="font-mono text-[10px] text-text-muted">{project.year}</span>
                       </div>
                     </div>
 
-                    <div className="md:col-span-2">
+                    {/* Right content */}
+                    <div className="md:col-span-9">
                       <p className="text-text-secondary leading-relaxed mb-4">
                         {project.longDescription}
                       </p>
-                      <div className="flex flex-wrap gap-2 mb-4">
+                      <div className="flex flex-wrap items-center gap-2">
                         {project.tech.map((t) => (
                           <span
                             key={t}
-                            className="text-xs font-mono px-2 py-1 rounded bg-bg text-text-muted border border-border-subtle"
+                            className="text-[10px] font-mono px-2 py-1 rounded-sm bg-bg-surface text-text-muted border border-border-subtle"
                           >
                             {t}
                           </span>
                         ))}
+                        {project.link && (
+                          <a
+                            href={project.link}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="text-xs text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1 ml-2"
+                          >
+                            Kunjungi <ExternalLink size={12} />
+                          </a>
+                        )}
                       </div>
-                      {project.link && (
-                        <a
-                          href={project.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1"
-                        >
-                          Kunjungi project <ExternalLink size={14} />
-                        </a>
-                      )}
                     </div>
                   </article>
                 </RevealText>

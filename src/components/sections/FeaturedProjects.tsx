@@ -4,18 +4,21 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import RevealText from "@/components/motion/RevealText";
 import StaggerGrid from "@/components/motion/StaggerGrid";
+import SectionLabel from "@/components/ui/SectionLabel";
 import { projects } from "@/data/projects";
 
 export default function FeaturedProjects() {
   const featured = projects.filter((p) => p.featured);
 
   return (
-    <section className="section-padding px-6 bg-bg-surface">
+    <section className="section-spacing px-6 bg-bg-surface relative">
       <div className="max-w-6xl mx-auto">
+        <SectionLabel number="03" label="Kerjaan Terpilih" />
+
         <div className="flex items-end justify-between mb-16">
           <RevealText>
-            <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight">
-              Kerjaan yang udah jadi
+            <h2 className="font-editorial text-4xl md:text-5xl font-bold tracking-tight">
+              Yang udah pernah dibangun
             </h2>
           </RevealText>
           <RevealText delay={0.2}>
@@ -28,37 +31,52 @@ export default function FeaturedProjects() {
           </RevealText>
         </div>
 
-        <StaggerGrid className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <StaggerGrid className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {featured.map((project) => (
             <Link
               key={project.slug}
               href={`/projects#${project.slug}`}
-              className="group block p-6 border border-border-subtle rounded-md bg-bg hover:bg-bg-elevated card-hover"
+              className="group block paper-card p-8 rounded-sm"
             >
-              <div className="flex items-start justify-between mb-4">
-                <span className="text-xs font-mono uppercase tracking-widest text-accent">
+              {/* Top annotation */}
+              <div className="flex items-center justify-between mb-6">
+                <span className="font-mono text-[10px] tracking-wider text-blueprint/60 uppercase">
                   {project.category}
                 </span>
-                <ArrowUpRight
-                  size={16}
-                  className="text-text-muted group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
-                />
+                <span className="font-mono text-[10px] text-text-muted">
+                  {project.year}
+                </span>
               </div>
-              <h3 className="font-display text-xl font-semibold mb-2 group-hover:text-accent transition-colors">
+
+              {/* Title */}
+              <h3 className="font-display text-2xl font-bold mb-3 group-hover:text-accent transition-colors">
                 {project.title}
               </h3>
-              <p className="text-sm text-text-secondary leading-relaxed mb-4">
+
+              {/* Description */}
+              <p className="text-sm text-text-secondary leading-relaxed mb-6">
                 {project.tagline}
               </p>
-              <div className="flex flex-wrap gap-2">
+
+              {/* Tech tags */}
+              <div className="flex flex-wrap gap-2 mb-6">
                 {project.tech.slice(0, 3).map((t) => (
                   <span
                     key={t}
-                    className="text-xs font-mono px-2 py-1 rounded bg-bg-surface text-text-muted"
+                    className="text-[10px] font-mono px-2 py-1 rounded bg-bg-surface text-text-muted border border-border-subtle"
                   >
                     {t}
                   </span>
                 ))}
+              </div>
+
+              {/* Bottom line */}
+              <div className="flex items-center justify-between pt-4 border-t border-border-subtle">
+                <span className="text-xs text-text-muted">Baca studi kasus</span>
+                <ArrowUpRight
+                  size={14}
+                  className="text-text-muted group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+                />
               </div>
             </Link>
           ))}

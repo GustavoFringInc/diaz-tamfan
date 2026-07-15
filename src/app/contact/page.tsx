@@ -4,6 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import RevealText from "@/components/motion/RevealText";
+import SectionLabel from "@/components/ui/SectionLabel";
 import { Mail, Globe, Link2, MessageCircle, ArrowUpRight } from "lucide-react";
 
 const links = [
@@ -12,24 +13,28 @@ const links = [
     label: "WhatsApp",
     value: "0831-7952-4847",
     href: "https://wa.me/6283179524847",
+    note: "Paling cepet respon di sini",
   },
   {
     icon: Globe,
     label: "GitHub",
     value: "GustavoFringInc",
     href: "https://github.com/GustavoFringInc",
+    note: "Lihat kode dan eksperimen",
   },
   {
     icon: Link2,
     label: "Instagram",
     value: "@growthdz",
     href: "https://instagram.com/growthdz",
+    note: "Behind the scenes",
   },
   {
     icon: Mail,
     label: "Substack",
     value: "@growthdz",
     href: "https://substack.com/@growthdz",
+    note: "Tulisan panjang",
   },
 ];
 
@@ -37,63 +42,69 @@ export default function ContactPage() {
   return (
     <SmoothScroll>
       <Navbar />
-      <main className="pt-16">
-        <section className="section-padding px-6 min-h-[70vh] flex items-center">
+      <main className="pt-14">
+        <section className="section-spacing px-6 min-h-[70vh] flex items-center">
           <div className="max-w-3xl mx-auto w-full">
+            <SectionLabel number="F" label="Contact" />
+
             <RevealText
               as="h1"
-              className="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4"
+              className="font-editorial text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.05]"
             >
-              Ayo ngobrol
+              Mau ngobrol?{" "}
+              <span className="italic text-accent">Pintunya terbuka</span>.
             </RevealText>
-            <RevealText delay={0.1} className="text-text-secondary mb-16 max-w-xl">
+            <RevealText delay={0.1} className="text-text-secondary mb-20 max-w-xl">
               <p>
-                Aku selalu terbuka buat ngobrol soal produk AI, education technology, 
-                desain, atau masalah menarik yang layak diselesaikan. Gak pake form — 
-                langsung kontak aja.
+                Soal produk AI, education technology, desain, atau hal menarik lain 
+                yang layak didiskusikan. Nggak perlu formal, santai aja. 
+                Nggak pake form — langsung kontak.
               </p>
             </RevealText>
 
-            <div className="grid sm:grid-cols-2 gap-4 mb-16">
+            <div className="grid sm:grid-cols-2 gap-4 mb-20">
               {links.map((link, i) => (
                 <RevealText key={link.label} delay={0.08 * i}>
                   <a
                     href={link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center gap-4 p-5 border border-border-subtle rounded-md bg-bg-surface hover:bg-bg-elevated hover:border-border transition-all card-hover"
+                    className="group block p-6 paper-card rounded-sm"
                   >
-                    <link.icon
-                      size={20}
-                      className="text-text-muted group-hover:text-accent transition-colors"
-                    />
-                    <div className="flex-1">
-                      <div className="text-xs font-mono uppercase tracking-widest text-text-muted mb-0.5">
-                        {link.label}
-                      </div>
-                      <div className="text-sm font-medium group-hover:text-accent transition-colors">
-                        {link.value}
-                      </div>
+                    <div className="flex items-start justify-between mb-4">
+                      <link.icon
+                        size={20}
+                        className="text-text-muted group-hover:text-accent transition-colors"
+                      />
+                      <ArrowUpRight
+                        size={14}
+                        className="text-text-muted group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+                      />
                     </div>
-                    <ArrowUpRight
-                      size={14}
-                      className="text-text-muted group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
-                    />
+                    <div className="font-mono text-[10px] text-blueprint/60 uppercase tracking-wider mb-1">
+                      {link.label}
+                    </div>
+                    <div className="font-medium text-sm mb-2 group-hover:text-accent transition-colors">
+                      {link.value}
+                    </div>
+                    <div className="text-xs text-text-muted">
+                      {link.note}
+                    </div>
                   </a>
                 </RevealText>
               ))}
             </div>
 
             <RevealText delay={0.3}>
-              <div className="p-6 border border-border-subtle rounded-md bg-bg-surface">
-                <h2 className="font-display text-lg font-semibold mb-2">
+              <div className="paper-note p-6 rounded-sm max-w-lg">
+                <h2 className="font-display text-lg font-bold mb-3">
                   Terbuka buat
                 </h2>
                 <ul className="space-y-2 text-sm text-text-secondary">
-                  <li>→ Kolaborasi di produk AI dan education technology</li>
-                  <li>→ Ngobrol soal AI workflow dan produktivitas</li>
-                  <li>→ Konsultasi product architecture dan design systems</li>
-                  <li>→ Obrolan menarik — gak perlu agenda khusus</li>
+                  <li>Kolaborasi di produk AI dan education technology</li>
+                  <li>Ngobrol soal AI workflow dan produktivitas</li>
+                  <li>Konsultasi product architecture dan design systems</li>
+                  <li>Obrolan menarik tanpa agenda khusus</li>
                 </ul>
               </div>
             </RevealText>

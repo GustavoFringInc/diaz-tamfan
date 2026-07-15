@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import RevealText from "@/components/motion/RevealText";
 import StaggerGrid from "@/components/motion/StaggerGrid";
+import SectionLabel from "@/components/ui/SectionLabel";
 import { journalPosts } from "@/data/journal";
 import { X, Calendar, Clock } from "lucide-react";
 
@@ -22,14 +23,7 @@ function ReadingProgress() {
     return () => window.removeEventListener("scroll", updateProgress);
   }, []);
 
-  return (
-    <div className="fixed top-16 left-0 right-0 z-40 h-0.5 bg-border-subtle">
-      <div
-        className="h-full bg-accent transition-all duration-150"
-        style={{ width: `${progress}%` }}
-      />
-    </div>
-  );
+  return <div className="reading-progress" style={{ width: `${progress}%` }} />;
 }
 
 export default function JournalPage() {
@@ -40,47 +34,51 @@ export default function JournalPage() {
     <SmoothScroll>
       <Navbar />
       <ReadingProgress />
-      <main className="pt-16">
-        <section className="section-padding px-6">
+      <main className="pt-14">
+        <section className="section-spacing px-6">
           <div className="max-w-4xl mx-auto">
+            <SectionLabel number="B" label="Journal" />
+
             <RevealText
               as="h1"
-              className="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4"
+              className="font-editorial text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.05]"
             >
-              Journal
+              Nulis itu cara aku mikir.{" "}
+              <span className="italic text-accent">Dan ini jejaknya</span>.
             </RevealText>
-            <RevealText delay={0.1} className="text-text-secondary mb-16 max-w-2xl">
+            <RevealText delay={0.1} className="text-text-secondary mb-20 max-w-2xl">
               <p>
                 Pandangan personal soal AI, cara mikir, dan gimana AI bisa bantu 
-                produktivitas dan problem solving yang nyata. Ditulis gaya ngobrol, 
-                bukan artikel korporat. Nulis itu cara aku mikir — dan ini jejaknya.
+                produktivitas yang nyata. Bukan artikel korporat. Bukan tutorial. 
+                Cuma catatan dari seseorang yang lagi jalan dan nulis sambil jalan.
               </p>
             </RevealText>
 
-            <StaggerGrid className="space-y-6" staggerDelay={0.08}>
-              {journalPosts.map((p) => (
+            <StaggerGrid className="space-y-1" staggerDelay={0.08}>
+              {journalPosts.map((p, i) => (
                 <button
                   key={p.slug}
                   onClick={() => setSelectedPost(p.slug)}
-                  className="w-full text-left group p-6 border border-border-subtle rounded-md bg-bg-surface hover:bg-bg-elevated transition-colors card-hover"
+                  className="w-full text-left group py-8 border-b border-border-subtle hover:bg-bg-surface/30 transition-colors px-4 -mx-4 rounded-sm"
                 >
                   <div className="flex items-center gap-3 mb-3">
-                    <span className="text-xs font-mono text-accent">
+                    <span className="font-mono text-[10px] text-blueprint/60">
+                      {String(i + 1).padStart(2, "0")}
+                    </span>
+                    <span className="font-mono text-[10px] text-accent tracking-wider uppercase">
                       {p.tags[0]}
                     </span>
-                    <span className="text-xs text-text-muted">·</span>
-                    <span className="text-xs text-text-muted flex items-center gap-1">
-                      <Calendar size={10} /> {p.date}
+                    <span className="font-mono text-[10px] text-text-muted flex items-center gap-1">
+                      <Calendar size={9} /> {p.date}
                     </span>
-                    <span className="text-xs text-text-muted">·</span>
-                    <span className="text-xs text-text-muted flex items-center gap-1">
-                      <Clock size={10} /> {p.readingTime}
+                    <span className="font-mono text-[10px] text-text-muted flex items-center gap-1">
+                      <Clock size={9} /> {p.readingTime}
                     </span>
                   </div>
-                  <h2 className="font-display text-xl md:text-2xl font-semibold mb-3 group-hover:text-accent transition-colors">
+                  <h2 className="font-display text-xl md:text-2xl font-bold mb-3 group-hover:text-accent transition-colors leading-snug">
                     {p.title}
                   </h2>
-                  <p className="text-sm text-text-secondary leading-relaxed">
+                  <p className="text-sm text-text-secondary leading-relaxed max-w-xl">
                     {p.excerpt}
                   </p>
                 </button>
@@ -89,40 +87,40 @@ export default function JournalPage() {
           </div>
         </section>
 
-        {/* Post modal */}
+        {/* Post modal - editorial style */}
         {post && (
-          <div className="fixed inset-0 z-50 bg-bg/95 overflow-y-auto">
+          <div className="fixed inset-0 z-50 bg-bg/98 overflow-y-auto backdrop-blur-sm">
             <div className="max-w-2xl mx-auto px-6 py-16">
               <button
                 onClick={() => setSelectedPost(null)}
-                className="mb-8 text-sm text-text-secondary hover:text-text-primary transition-colors flex items-center gap-2"
+                className="mb-10 text-sm text-text-secondary hover:text-text-primary transition-colors flex items-center gap-2 font-mono"
               >
-                <X size={14} /> Balik ke journal
+                <X size={14} /> Kembali
               </button>
-              <div className="mb-6 flex items-center gap-3">
-                <span className="text-xs font-mono text-accent">
+              <div className="mb-8 flex items-center gap-3 flex-wrap">
+                <span className="font-mono text-[10px] text-accent tracking-wider uppercase">
                   {post.tags[0]}
                 </span>
-                <span className="text-xs text-text-muted">·</span>
-                <span className="text-xs text-text-muted">{post.date}</span>
-                <span className="text-xs text-text-muted">·</span>
-                <span className="text-xs text-text-muted">{post.readingTime}</span>
+                <span className="w-1 h-1 rounded-full bg-border" />
+                <span className="font-mono text-[10px] text-text-muted">{post.date}</span>
+                <span className="w-1 h-1 rounded-full bg-border" />
+                <span className="font-mono text-[10px] text-text-muted">{post.readingTime}</span>
               </div>
-              <h1 className="font-display text-3xl md:text-4xl font-bold mb-8">
+              <h1 className="font-editorial text-3xl md:text-4xl font-bold mb-10 leading-tight">
                 {post.title}
               </h1>
               <article className="max-w-none">
                 {post.content.split("\n\n").map((paragraph, i) => (
                   <p
                     key={i}
-                    className="text-text-secondary leading-relaxed mb-4"
+                    className="text-text-secondary leading-[1.8] mb-5 text-[15px]"
                   >
                     {paragraph.startsWith("**") && paragraph.endsWith("**") ? (
-                      <strong className="text-text-primary">
+                      <strong className="text-text-primary font-semibold">
                         {paragraph.replace(/\*\*/g, "")}
                       </strong>
                     ) : paragraph.startsWith("- ") ? (
-                      <span className="block pl-4 border-l border-border-subtle">
+                      <span className="block pl-5 border-l-2 border-border-subtle text-text-secondary">
                         {paragraph.replace("- ", "")}
                       </span>
                     ) : (
@@ -131,11 +129,11 @@ export default function JournalPage() {
                   </p>
                 ))}
               </article>
-              <div className="flex flex-wrap gap-2 mt-8">
+              <div className="flex flex-wrap gap-2 mt-12 pt-8 border-t border-border-subtle">
                 {post.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs font-mono px-2 py-1 rounded bg-bg-surface text-text-muted border border-border-subtle"
+                    className="text-[10px] font-mono px-2 py-1 rounded-sm bg-bg-surface text-text-muted border border-border-subtle"
                   >
                     {tag}
                   </span>

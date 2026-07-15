@@ -26,18 +26,18 @@ export default function MagneticButton({
     const rect = ref.current.getBoundingClientRect();
     const x = e.clientX - rect.left - rect.width / 2;
     const y = e.clientY - rect.top - rect.height / 2;
-    setPosition({ x: x * 0.3, y: y * 0.3 });
+    setPosition({ x: x * 0.25, y: y * 0.25 });
   };
 
   const reset = () => setPosition({ x: 0, y: 0 });
 
   const base =
-    "relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-md font-medium text-sm transition-colors duration-300 select-none";
+    "relative inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-sm font-medium text-sm transition-colors duration-300 select-none border";
 
   const styles =
     variant === "primary"
-      ? "bg-accent text-bg hover:bg-accent-hover"
-      : "border border-border text-text-primary hover:border-text-muted hover:bg-bg-elevated";
+      ? "bg-text-primary text-bg border-text-primary hover:bg-accent hover:border-accent"
+      : "bg-transparent text-text-on-dark border-text-muted/30 hover:border-text-on-dark hover:bg-white/5";
 
   const Component = href ? motion.a : motion.button;
   const props = href ? { href, target: "_blank", rel: "noopener noreferrer" } : { onClick };

@@ -5,23 +5,24 @@ import { Globe, Link2, Mail, MessageCircle } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="border-t border-border-subtle py-12 px-6">
+    <footer className="border-t border-border py-16 px-6">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-          <div>
-            <h3 className="font-display font-semibold text-lg mb-3">
-              Diaz Rahardi
-            </h3>
-            <p className="text-sm text-text-secondary leading-relaxed max-w-xs">
-              AI Product Builder. Bantu orang mikir dan kerja lebih baik pakai AI.
-              Bukan cuma bikin produk — tapi bikin sistem yang hidup.
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16">
+          {/* Left - about */}
+          <div className="md:col-span-5">
+            <div className="flex items-center gap-2 mb-4">
+              <span className="w-2 h-2 rounded-full bg-accent inline-block" />
+              <span className="font-display font-semibold">diaz rahardi</span>
+            </div>
+            <p className="text-sm text-text-secondary leading-relaxed max-w-sm">
+              AI Product Builder dari Indonesia. Bantu orang mikir dan kerja lebih baik 
+              pakai AI. Bukan cuma bikin produk — tapi bikin sistem yang hidup.
             </p>
           </div>
 
-          <div>
-            <h4 className="text-xs font-mono uppercase tracking-widest text-text-muted mb-4">
-              Navigasi
-            </h4>
+          {/* Center - navigation */}
+          <div className="md:col-span-3">
+            <h4 className="section-number mb-4">Navigasi</h4>
             <div className="flex flex-col gap-2">
               {[
                 { href: "/projects", label: "Projects" },
@@ -41,11 +42,10 @@ export default function Footer() {
             </div>
           </div>
 
-          <div>
-            <h4 className="text-xs font-mono uppercase tracking-widest text-text-muted mb-4">
-              Connect
-            </h4>
-            <div className="flex gap-4">
+          {/* Right - connect */}
+          <div className="md:col-span-4">
+            <h4 className="section-number mb-4">Connect</h4>
+            <div className="flex gap-4 mb-4">
               <a
                 href="https://github.com/GustavoFringInc"
                 target="_blank"
@@ -83,12 +83,15 @@ export default function Footer() {
                 <MessageCircle size={18} />
               </a>
             </div>
+            <p className="text-xs text-text-muted">
+              Paling cepet lewat WhatsApp.
+            </p>
           </div>
         </div>
 
         <div className="pt-8 border-t border-border-subtle flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-text-muted">
-            © {new Date().getFullYear()} Muhammad Diaz Rahardi Putra. Dibangun dengan niat.
+            © {new Date().getFullYear()} Muhammad Diaz Rahardi Putra — dibangun dengan niat, bukan template.
           </p>
           <p className="text-xs text-text-muted font-mono">
             Next.js · TypeScript · Tailwind · Framer Motion

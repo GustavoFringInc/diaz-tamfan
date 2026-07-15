@@ -7,7 +7,6 @@ export default function MouseSpotlight() {
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    // Only enable on desktop
     if (window.innerWidth < 768) return;
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -35,10 +34,10 @@ export default function MouseSpotlight() {
         left: position.x,
         top: position.y,
         transform: "translate(-50%, -50%)",
-        width: "600px",
-        height: "600px",
+        width: "500px",
+        height: "500px",
         background:
-          "radial-gradient(circle, rgba(232, 169, 72, 0.08) 0%, transparent 70%)",
+          "radial-gradient(circle, rgba(194, 65, 12, 0.04) 0%, transparent 70%)",
         opacity: isVisible ? 1 : 0,
       }}
     />

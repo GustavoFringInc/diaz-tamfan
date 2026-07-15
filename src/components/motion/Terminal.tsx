@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const lines = [
   { type: "input", text: "diaz@gxde ~ % whoami" },
-  { type: "output", text: "AI Product Builder · System Thinker · Indonesia 🇮🇩" },
+  { type: "output", text: "AI Product Builder · System Thinker · Indonesia" },
   { type: "input", text: "diaz@gxde ~ % cat philosophy.txt" },
   { type: "output", text: "AI should help humans think, not replace them." },
   { type: "output", text: "Simplicity wins. Design is communication." },
@@ -32,14 +32,16 @@ export default function Terminal() {
   }, []);
 
   return (
-    <div className="bg-bg-surface border border-border rounded-md overflow-hidden font-mono text-sm">
-      <div className="flex items-center gap-2 px-4 py-3 border-b border-border-subtle bg-bg-elevated">
-        <div className="w-3 h-3 rounded-full bg-red-500/60"></div>
-        <div className="w-3 h-3 rounded-full bg-yellow-500/60"></div>
-        <div className="w-3 h-3 rounded-full bg-green-500/60"></div>
-        <span className="ml-2 text-text-muted text-xs">diaz@gxde — zsh</span>
+    <div className="bg-bg-dark border border-border-dark rounded-sm overflow-hidden font-mono text-sm shadow-lg">
+      {/* Terminal header */}
+      <div className="flex items-center gap-2 px-4 py-3 border-b border-border-dark bg-bg-dark-surface">
+        <div className="w-2.5 h-2.5 rounded-full bg-red-500/70"></div>
+        <div className="w-2.5 h-2.5 rounded-full bg-yellow-500/70"></div>
+        <div className="w-2.5 h-2.5 rounded-full bg-green-500/70"></div>
+        <span className="ml-3 text-text-muted text-[10px] font-mono tracking-wider">diaz@gxde — zsh</span>
       </div>
-      <div className="p-5 space-y-1.5 min-h-[280px]">
+      {/* Terminal body */}
+      <div className="p-5 space-y-1.5 min-h-[260px]">
         {lines.slice(0, visibleLines).map((line, i) => (
           <motion.div
             key={i}
@@ -48,11 +50,11 @@ export default function Terminal() {
             transition={{ duration: 0.3 }}
           >
             {line.type === "input" ? (
-              <div className="text-accent">
-                <span className="text-text-muted">{">"}</span> {line.text}
+              <div className="text-[#d79921]">
+                <span className="text-[#928374]">$</span> {line.text}
               </div>
             ) : (
-              <div className="text-text-secondary pl-3">{line.text}</div>
+              <div className="text-[#a89984] pl-3">{line.text}</div>
             )}
           </motion.div>
         ))}
@@ -60,9 +62,9 @@ export default function Terminal() {
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            className="text-accent flex items-center"
+            className="text-[#d79921] flex items-center"
           >
-            <span className="text-text-muted">{">"}</span>
+            <span className="text-[#928374]">$</span>
             <span className="ml-1">diaz@gxde ~ %</span>
             <motion.span
               animate={{ opacity: [1, 0] }}

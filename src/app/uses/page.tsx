@@ -5,6 +5,7 @@ import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import RevealText from "@/components/motion/RevealText";
 import Terminal from "@/components/motion/Terminal";
+import SectionLabel from "@/components/ui/SectionLabel";
 
 const categories = [
   {
@@ -60,18 +61,21 @@ export default function UsesPage() {
   return (
     <SmoothScroll>
       <Navbar />
-      <main className="pt-16">
-        <section className="section-padding px-6">
+      <main className="pt-14">
+        <section className="section-spacing px-6">
           <div className="max-w-4xl mx-auto">
+            <SectionLabel number="E" label="Uses" />
+
             <RevealText
               as="h1"
-              className="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4"
+              className="font-editorial text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.05]"
             >
-              Uses
+              Alat perang{" "}
+              <span className="italic text-accent">sehari-hari</span>.
             </RevealText>
-            <RevealText delay={0.1} className="text-text-secondary mb-16 max-w-2xl">
+            <RevealText delay={0.1} className="text-text-secondary mb-20 max-w-2xl">
               <p>
-                Tools, setup, dan stack yang aku pakai sehari-hari. Semua dipilih 
+                Tools, setup, dan stack yang aku pakai setiap hari. Semua dipilih 
                 buat kecepatan, kejelasan, dan maintainability jangka panjang. 
                 Bukan yang paling hype — yang paling cocok.
               </p>
@@ -79,24 +83,29 @@ export default function UsesPage() {
 
             {/* Terminal preview */}
             <RevealText delay={0.15}>
-              <div className="mb-16">
+              <div className="mb-20">
                 <Terminal />
               </div>
             </RevealText>
 
             {/* Categories */}
-            <div className="space-y-12">
+            <div className="space-y-16">
               {categories.map((cat, i) => (
-                <RevealText key={cat.title} delay={0.05 * i}>
+                <RevealText key={cat.title} delay={0.04 * i}>
                   <div>
-                    <h2 className="font-display text-xl font-semibold mb-6 pb-2 border-b border-border-subtle">
-                      {cat.title}
-                    </h2>
+                    <div className="flex items-center gap-3 mb-6 pb-3 border-b border-border-subtle">
+                      <span className="font-mono text-[10px] text-blueprint/60">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <h2 className="font-display text-xl font-bold">
+                        {cat.title}
+                      </h2>
+                    </div>
                     <div className="grid md:grid-cols-2 gap-4">
                       {cat.items.map((item) => (
                         <div
                           key={item.name}
-                          className="p-4 border border-border-subtle rounded-md bg-bg-surface hover:bg-bg-elevated transition-colors"
+                          className="paper-card p-5 rounded-sm"
                         >
                           <div className="font-medium text-sm mb-1">
                             {item.name}

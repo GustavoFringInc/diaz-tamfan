@@ -32,13 +32,13 @@ export default function ConstellationBg() {
     const initNodes = () => {
       const w = canvas.offsetWidth;
       const h = canvas.offsetHeight;
-      const count = Math.floor((w * h) / 15000);
+      const count = Math.floor((w * h) / 18000);
       nodes = Array.from({ length: count }, () => ({
         x: Math.random() * w,
         y: Math.random() * h,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        radius: Math.random() * 1.5 + 0.5,
+        vx: (Math.random() - 0.5) * 0.2,
+        vy: (Math.random() - 0.5) * 0.2,
+        radius: Math.random() * 1.2 + 0.4,
       }));
     };
 
@@ -47,7 +47,6 @@ export default function ConstellationBg() {
       const h = canvas.offsetHeight;
       ctx.clearRect(0, 0, w, h);
 
-      // Update positions
       for (const node of nodes) {
         node.x += node.vx;
         node.y += node.vy;
@@ -56,8 +55,8 @@ export default function ConstellationBg() {
       }
 
       // Draw connections
-      const maxDistance = 120;
-      ctx.strokeStyle = "rgba(232, 169, 72, 0.15)";
+      const maxDistance = 100;
+      ctx.strokeStyle = "rgba(194, 65, 12, 0.12)";
       ctx.lineWidth = 0.5;
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
@@ -65,7 +64,7 @@ export default function ConstellationBg() {
           const dy = nodes[i].y - nodes[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
           if (dist < maxDistance) {
-            ctx.globalAlpha = (1 - dist / maxDistance) * 0.5;
+            ctx.globalAlpha = (1 - dist / maxDistance) * 0.4;
             ctx.beginPath();
             ctx.moveTo(nodes[i].x, nodes[i].y);
             ctx.lineTo(nodes[j].x, nodes[j].y);
@@ -75,7 +74,7 @@ export default function ConstellationBg() {
       }
 
       // Draw nodes
-      ctx.fillStyle = "rgba(232, 169, 72, 0.6)";
+      ctx.fillStyle = "rgba(194, 65, 12, 0.5)";
       ctx.globalAlpha = 1;
       for (const node of nodes) {
         ctx.beginPath();
@@ -100,7 +99,7 @@ export default function ConstellationBg() {
     <canvas
       ref={canvasRef}
       className="absolute inset-0 w-full h-full pointer-events-none"
-      style={{ opacity: 0.6 }}
+      style={{ opacity: 0.5 }}
     />
   );
 }

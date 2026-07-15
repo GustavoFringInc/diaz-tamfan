@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/layout/SmoothScroll";
@@ -9,6 +9,29 @@ import StaggerGrid from "@/components/motion/StaggerGrid";
 import { journalPosts } from "@/data/journal";
 import { X, Calendar, Clock } from "lucide-react";
 
+function ReadingProgress() {
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const updateProgress = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+      setProgress(docHeight > 0 ? (scrollTop / docHeight) * 100 : 0);
+    };
+    window.addEventListener("scroll", updateProgress);
+    return () => window.removeEventListener("scroll", updateProgress);
+  }, []);
+
+  return (
+    <div className="fixed top-16 left-0 right-0 z-40 h-0.5 bg-border-subtle">
+      <div
+        className="h-full bg-accent transition-all duration-150"
+        style={{ width: `${progress}%` }}
+      />
+    </div>
+  );
+}
+
 export default function JournalPage() {
   const [selectedPost, setSelectedPost] = useState<string | null>(null);
   const post = journalPosts.find((p) => p.slug === selectedPost);
@@ -16,6 +39,7 @@ export default function JournalPage() {
   return (
     <SmoothScroll>
       <Navbar />
+      <ReadingProgress />
       <main className="pt-16">
         <section className="section-padding px-6">
           <div className="max-w-4xl mx-auto">
@@ -27,9 +51,9 @@ export default function JournalPage() {
             </RevealText>
             <RevealText delay={0.1} className="text-text-secondary mb-16 max-w-2xl">
               <p>
-                Notes on product thinking, AI workflows, design philosophy, and the
-                craft of building things that matter. Writing is thinking made
-                visible.
+                Pandangan personal soal AI, cara mikir, dan gimana AI bisa bantu 
+                produktivitas dan problem solving yang nyata. Ditulis gaya ngobrol, 
+                bukan artikel korporat. Nulis itu cara aku mikir — dan ini jejaknya.
               </p>
             </RevealText>
 
@@ -73,7 +97,7 @@ export default function JournalPage() {
                 onClick={() => setSelectedPost(null)}
                 className="mb-8 text-sm text-text-secondary hover:text-text-primary transition-colors flex items-center gap-2"
               >
-                <X size={14} /> Back to journal
+                <X size={14} /> Balik ke journal
               </button>
               <div className="mb-6 flex items-center gap-3">
                 <span className="text-xs font-mono text-accent">
@@ -87,7 +111,7 @@ export default function JournalPage() {
               <h1 className="font-display text-3xl md:text-4xl font-bold mb-8">
                 {post.title}
               </h1>
-              <article className="prose prose-invert max-w-none">
+              <article className="max-w-none">
                 {post.content.split("\n\n").map((paragraph, i) => (
                   <p
                     key={i}

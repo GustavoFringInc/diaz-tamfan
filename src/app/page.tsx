@@ -36,27 +36,27 @@ export default function Home() {
             </RevealText>
             <RevealText delay={0.1}>
               <p className="text-text-secondary mb-12 max-w-xl">
-                Notes on product thinking, AI workflows, and the craft of building
-                things that matter.
+                Catatan soal product thinking, workflow AI, dan gimana caranya
+                bikin sesuatu yang beneran berguna. Nulis itu cara aku mikir.
               </p>
             </RevealText>
 
             <div className="space-y-6">
               {[
                 {
-                  title: "Thinking in Systems: Why I Build Products, Not Features",
-                  date: "Dec 15, 2024",
+                  title: "Mikir dalam Sistem: Kenapa Aku Build Produk, Bukan Fitur",
+                  date: "15 Des 2024",
                   tag: "product-thinking",
                 },
                 {
-                  title: "AI as Co-Architect: How I Work with LLMs",
-                  date: "Nov 28, 2024",
+                  title: "AI sebagai Co-Architect: Cara Aku Kerja bareng LLM",
+                  date: "28 Nov 2024",
                   tag: "AI",
                 },
                 {
-                  title: "Quiet Confidence in Design",
-                  date: "Nov 10, 2024",
-                  tag: "design",
+                  title: "Quiet Confidence dalam Desain",
+                  date: "10 Nov 2024",
+                  tag: "desain",
                 },
               ].map((post, i) => (
                 <RevealText key={post.title} delay={0.1 + i * 0.08}>
@@ -88,19 +88,19 @@ export default function Home() {
             <div>
               <RevealText>
                 <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight mb-4">
-                  My Setup
+                  Setup Aku
                 </h2>
               </RevealText>
               <RevealText delay={0.1}>
                 <p className="text-text-secondary leading-relaxed mb-6">
-                  I work from a carefully curated terminal environment on GXDE OS.
-                  Gruvbox-themed, Zsh + Starship prompt, and a stack of AI tools
-                  that help me think faster.
+                  Kerja dari terminal yang udah di-tweak rapi di GXDE OS. 
+                  Tema Gruvbox, Zsh + Starship prompt, dan sekumpulan AI tools 
+                  yang bantu aku mikir lebih cepet.
                 </p>
               </RevealText>
               <RevealText delay={0.2}>
                 <MagneticButton href="/uses" variant="secondary">
-                  See my full setup
+                  Lihat full setup
                 </MagneticButton>
               </RevealText>
             </div>
@@ -117,16 +117,16 @@ export default function Home() {
               as="h2"
               className="font-display text-3xl md:text-4xl font-bold tracking-tight mb-4"
             >
-              Let's build something
+              Ayo ngobrol
             </RevealText>
             <RevealText delay={0.1} className="text-text-secondary mb-8">
               <p>
-                Always open to conversations about AI products, education
-                technology, or interesting problems worth solving.
+                Selalu terbuka buat ngobrol soal AI products, education technology, 
+                atau masalah menarik yang layak diselesaikan bareng.
               </p>
             </RevealText>
             <RevealText delay={0.2}>
-              <MagneticButton href="/contact">Get in touch</MagneticButton>
+              <MagneticButton href="/contact">Hubungi aku</MagneticButton>
             </RevealText>
           </div>
         </section>

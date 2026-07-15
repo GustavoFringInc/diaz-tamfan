@@ -16,13 +16,13 @@ export const projects: Project[] = [
   {
     slug: "smanso-ai",
     title: "SMANSO.AI",
-    tagline: "AI-powered learning platform for Indonesian students",
+    tagline: "Platform belajar berbasis AI buat siswa Indonesia",
     description:
-      "An educational platform that makes learning more interactive and personalized through AI. Designed specifically for Indonesian high school students.",
+      "Platform edukasi yang bikin belajar lebih interaktif dan personal lewat AI. Dibuat khusus buat anak SMA di Indonesia.",
     longDescription:
-      "SMANSO.AI was born from a simple observation: Indonesian students deserve better learning tools. The platform uses AI to create personalized learning experiences, adapting to each student's pace and style. From interactive quizzes to AI tutoring sessions, every feature is designed to make learning feel less like a chore and more like a conversation with a patient mentor.",
+      "SMANSO.AI lahir dari observasi simpel: siswa Indonesia deserve tools belajar yang lebih baik. Platform ini pakai AI buat bikin pengalaman belajar yang personal, adapt sama pace dan gaya belajar masing-masing siswa. Dari quiz interaktif sampai sesi tutoring AI, semua fitur didesain biar belajar gak berasa kayak beban, tapi lebih kayak ngobrol sama mentor yang sabar. Jujur aja, ini project yang paling deket di hati karena langsung nyentuh masalah yang aku alamin sendiri waktu sekolah.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Google Gemini", "Supabase"],
-    category: "Education",
+    category: "Edukasi",
     status: "active",
     year: "2024",
     featured: true,
@@ -30,13 +30,13 @@ export const projects: Project[] = [
   {
     slug: "yapping-ai",
     title: "Yapping.ai",
-    tagline: "AI chat platform with multiple personalities",
+    tagline: "Platform chat AI dengan berbagai kepribadian",
     description:
-      "A conversational AI platform featuring diverse personalities and unique conversational experiences. Making AI interactions feel natural and entertaining.",
+      "Platform AI conversational dengan berbagai karakter dan pengalaman obrolan yang unik. Bikin interaksi AI berasa lebih natural dan entertaining.",
     longDescription:
-      "Yapping.ai explores the spectrum of AI personalities. Each character has a distinct voice, knowledge base, and conversational style — from a philosophical thinker to a comedy writer. The goal isn't to replace human conversation, but to explore what happens when AI has character.",
+      "Yapping.ai itu eksperimen soal spektrum kepribadian AI. Tiap karakter punya voice, knowledge base, dan gaya ngobrol yang beda — dari pemikir filosofis sampai comedy writer. Tujuannya bukan gantiin obrolan manusia, tapi eksplorasi apa yang terjadi kalau AI punya karakter. Ternyata hasilnya lebih menarik dari yang dikira — orang lebih enjoy ngobrol sama AI yang punya 'personality' daripada yang netral-generic.",
     tech: ["React", "TypeScript", "OpenAI API", "Tailwind CSS", "Vercel"],
-    category: "AI Product",
+    category: "Produk AI",
     status: "active",
     year: "2024",
     featured: true,
@@ -44,13 +44,13 @@ export const projects: Project[] = [
   {
     slug: "sora-loka",
     title: "Sora Loka",
-    tagline: "Experimental P2P offline communication network",
+    tagline: "Eksperimen jaringan komunikasi P2P offline",
     description:
-      "A peer-to-peer communication concept that works offline. Exploring decentralized networking for communication without internet dependency.",
+      "Konsep komunikasi peer-to-peer yang jalan tanpa internet. Eksplorasi decentralized networking buat komunikasi tanpa ketergantungan infrastruktur.",
     longDescription:
-      "Sora Loka is an experiment in resilient communication. What if we could connect without relying on centralized servers or internet infrastructure? This project explores mesh networking and P2P protocols for local communication — a research project that pushes the boundaries of what's possible in disconnected environments.",
+      "Sora Loka itu eksperimen di komunikasi yang resilient. Gimana kalau kita bisa connect tanpa bergantung sama server terpusat atau infrastruktur internet? Project ini eksplorasi mesh networking dan protokol P2P buat komunikasi lokal — research project yang push batas dari apa yang mungkin di environment yang disconnected. Masih eksperimental, tapi konsepnya punya potensi besar buat daerah-daerah yang infrastrukturnya belum stabil.",
     tech: ["JavaScript", "WebRTC", "P2P Networking", "Mesh Protocols"],
-    category: "Experiment",
+    category: "Eksperimen",
     status: "experiment",
     year: "2024",
     featured: true,
@@ -58,11 +58,11 @@ export const projects: Project[] = [
   {
     slug: "ai-translate",
     title: "AI Translate",
-    tagline: "Indonesian to English translation that preserves tone",
+    tagline: "Translate Indonesia-Inggris yang jaga tone dan konteks",
     description:
-      "A web application that translates Indonesian into natural English while preserving the original tone, context, and nuance.",
+      "Web app yang nerjemahin Bahasa Indonesia ke Inggris yang natural sambil jaga tone, konteks, dan nuansa aslinya.",
     longDescription:
-      "Most translation tools produce grammatically correct but emotionally flat translations. AI Translate focuses on preserving the voice of the original writer — whether it's casual, formal, humorous, or academic. The result is English that sounds like the writer intended, not like a dictionary.",
+      "Kebanyakan alat translate ngasilin terjemahan yang secara grammar bener tapi secara emosi datar. AI Translate fokus jaga voice dari penulis aslinya — mau itu casual, formal, humoris, atau akademis. Hasilnya Bahasa Inggris yang kedengeran kayak yang penulis mau, bukan kayak kamus. Ini project yang lahir dari frustasi pribadi — translate Google sering bikin hasil yang technically correct tapi soul-nya ilang.",
     tech: ["Next.js", "Tailwind CSS", "Google Gemini", "Vercel"],
     category: "Tool",
     status: "completed",
@@ -72,13 +72,13 @@ export const projects: Project[] = [
   {
     slug: "catatan-siswa",
     title: "Catatan Siswa",
-    tagline: "Digital publication platform for students",
+    tagline: "Platform publikasi digital buat siswa",
     description:
-      "A platform where students can write articles, share opinions, and publish stories. Encouraging a culture of writing among young Indonesians.",
+      "Platform dimana siswa bisa nulis artikel, sharing opini, dan publish cerita. Dorong budaya nulis di kalangan anak muda Indonesia.",
     longDescription:
-      "Catatan Siswa gives Indonesian students a voice. It's a digital publication platform designed to be approachable for first-time writers while professional enough to feel meaningful. Students publish articles on topics ranging from school life to social commentary.",
+      "Catatan Siswa kasih siswa Indonesia sebuah suara. Ini platform publikasi digital yang didesain approachable buat penulis pertama kali, tapi cukup profesional biar terasa bermakna. Siswa publish artikel mulai dari kehidupan sekolah sampai komentar sosial.",
     tech: ["Next.js", "Tailwind CSS", "MDX", "Supabase"],
-    category: "Publication",
+    category: "Publikasi",
     status: "active",
     year: "2024",
     featured: false,
@@ -86,11 +86,11 @@ export const projects: Project[] = [
   {
     slug: "growthdz",
     title: "Growthdz",
-    tagline: "Digital marketplace for templates & creative resources",
+    tagline: "Marketplace digital buat template & creative resources",
     description:
-      "A marketplace for high-quality templates and creative resources, helping creators find the tools they need to build faster.",
+      "Marketplace buat template dan resources kreatif berkualitas, bantu creator nemuin tools yang mereka butuh buat bangun lebih cepet.",
     longDescription:
-      "Growthdz is a curated digital marketplace where creators can find and sell templates, design resources, and productivity tools. Every product is reviewed for quality before listing.",
+      "Growthdz itu marketplace digital terkurasi dimana creator bisa nemuin dan jual template, design resources, dan productivity tools. Setiap produk di-review kualitasnya sebelum listing.",
     tech: ["Next.js", "TypeScript", "Stripe", "Supabase", "Tailwind CSS"],
     category: "Marketplace",
     status: "active",

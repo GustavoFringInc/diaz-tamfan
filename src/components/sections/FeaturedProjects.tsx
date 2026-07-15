@@ -15,7 +15,7 @@ export default function FeaturedProjects() {
         <div className="flex items-end justify-between mb-16">
           <RevealText>
             <h2 className="font-display text-3xl md:text-4xl font-bold tracking-tight">
-              Selected Work
+              Kerjaan yang udah jadi
             </h2>
           </RevealText>
           <RevealText delay={0.2}>
@@ -23,7 +23,7 @@ export default function FeaturedProjects() {
               href="/projects"
               className="text-sm text-text-secondary hover:text-accent transition-colors flex items-center gap-1"
             >
-              View all <ArrowUpRight size={14} />
+              Lihat semua <ArrowUpRight size={14} />
             </Link>
           </RevealText>
         </div>

@@ -10,48 +10,48 @@ const categories = [
   {
     title: "Hardware",
     items: [
-      { name: "Primary laptop", desc: "Linux machine running GXDE OS" },
-      { name: "Android phone", desc: "Running GXDE OS — because why not" },
-      { name: "Keyboard", desc: "Mechanical, tactile switches, minimal layout" },
+      { name: "Laptop utama", desc: "Mesin Linux pake GXDE OS" },
+      { name: "HP Android", desc: "Jalanin GXDE OS — karena kenapa enggak" },
+      { name: "Keyboard", desc: "Mechanical, tactile switches, layout minimalis" },
     ],
   },
   {
     title: "Development",
     items: [
-      { name: "Editor", desc: "VS Code with Gruvbox theme, minimal extensions" },
-      { name: "Terminal", desc: "Zsh + Starship prompt, custom Gruvbox config" },
+      { name: "Editor", desc: "VS Code tema Gruvbox, extension seminimal mungkin" },
+      { name: "Terminal", desc: "Zsh + Starship prompt, config Gruvbox custom" },
       { name: "Framework", desc: "Next.js (App Router) + TypeScript" },
-      { name: "Styling", desc: "Tailwind CSS — speed without compromise" },
+      { name: "Styling", desc: "Tailwind CSS — cepet tanpa kompromi" },
       { name: "Database", desc: "Supabase (Postgres) + Drizzle ORM" },
-      { name: "Hosting", desc: "Vercel for frontend, Supabase for backend" },
+      { name: "Hosting", desc: "Vercel buat frontend, Supabase buat backend" },
     ],
   },
   {
     title: "AI Tools",
     items: [
-      { name: "Cursor", desc: "AI-first code editor for rapid prototyping" },
-      { name: "Claude", desc: "Deep thinking, architecture, and documentation" },
-      { name: "Gemini", desc: "Research, long-context analysis, multimodal tasks" },
-      { name: "v0 / Lovable", desc: "Rapid UI prototyping and design exploration" },
-      { name: "Google Gemini API", desc: "Core AI backbone for most products" },
-      { name: "OpenAI API", desc: "For specific conversational use cases" },
+      { name: "Cursor", desc: "AI-first code editor buat rapid prototyping" },
+      { name: "Claude", desc: "Deep thinking, arsitektur, dan dokumentasi" },
+      { name: "Gemini", desc: "Research, analisis long-context, tugas multimodal" },
+      { name: "v0 / Lovable", desc: "Rapid UI prototyping dan eksplorasi desain" },
+      { name: "Google Gemini API", desc: "Backbone AI utama buat kebanyakan produk" },
+      { name: "OpenAI API", desc: "Buat use case conversational tertentu" },
     ],
   },
   {
-    title: "Design",
+    title: "Desain",
     items: [
       { name: "Figma", desc: "UI design, prototyping, design systems" },
       { name: "Font pair", desc: "Space Grotesk (display) + Inter (body) + JetBrains Mono" },
-      { name: "Color system", desc: "Gruvbox-inspired warm tones, desaturated for web" },
-      { name: "Icon set", desc: "Lucide — clean, consistent, minimal" },
+      { name: "Color system", desc: "Gruvbox-inspired warm tones, desaturated buat web" },
+      { name: "Icon set", desc: "Lucide — clean, konsisten, minimal" },
     ],
   },
   {
-    title: "Productivity",
+    title: "Produktivitas",
     items: [
-      { name: "Knowledge base", desc: "Second-brain system on Google Drive (Karpathy-style)" },
-      { name: "Notes", desc: "Markdown files, synced across devices" },
-      { name: "Writing", desc: "MDX for long-form, plain markdown for everything else" },
+      { name: "Knowledge base", desc: "Sistem second-brain di Google Drive (ala Karpathy)" },
+      { name: "Notes", desc: "File Markdown, sync lintas device" },
+      { name: "Writing", desc: "MDX buat long-form, markdown biasa buat yang lain" },
     ],
   },
 ];
@@ -71,8 +71,9 @@ export default function UsesPage() {
             </RevealText>
             <RevealText delay={0.1} className="text-text-secondary mb-16 max-w-2xl">
               <p>
-                The tools, setup, and stack I use daily. Everything is chosen for
-                speed, clarity, and long-term maintainability.
+                Tools, setup, dan stack yang aku pakai sehari-hari. Semua dipilih 
+                buat kecepatan, kejelasan, dan maintainability jangka panjang. 
+                Bukan yang paling hype — yang paling cocok.
               </p>
             </RevealText>
 

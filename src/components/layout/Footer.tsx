@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Globe, Link2, Mail } from "lucide-react";
+import { Globe, Link2, Mail, MessageCircle } from "lucide-react";
 
 export default function Footer() {
   return (
@@ -13,19 +13,20 @@ export default function Footer() {
               Diaz Rahardi
             </h3>
             <p className="text-sm text-text-secondary leading-relaxed max-w-xs">
-              AI Product Builder. Building products that combine AI, thoughtful
-              design, and meaningful experiences.
+              AI Product Builder. Bantu orang mikir dan kerja lebih baik pakai AI.
+              Bukan cuma bikin produk — tapi bikin sistem yang hidup.
             </p>
           </div>
 
           <div>
             <h4 className="text-xs font-mono uppercase tracking-widest text-text-muted mb-4">
-              Navigate
+              Navigasi
             </h4>
             <div className="flex flex-col gap-2">
               {[
                 { href: "/projects", label: "Projects" },
                 { href: "/journal", label: "Journal" },
+                { href: "/reading", label: "Reading" },
                 { href: "/now", label: "Now" },
                 { href: "/uses", label: "Uses" },
               ].map((link) => (
@@ -46,7 +47,7 @@ export default function Footer() {
             </h4>
             <div className="flex gap-4">
               <a
-                href="https://github.com/diazrahardi"
+                href="https://github.com/GustavoFringInc"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-secondary hover:text-accent transition-colors"
@@ -55,20 +56,31 @@ export default function Footer() {
                 <Globe size={18} />
               </a>
               <a
-                href="https://linkedin.com/in/diazrahardi"
+                href="https://instagram.com/growthdz"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-text-secondary hover:text-accent transition-colors"
-                aria-label="LinkedIn"
+                aria-label="Instagram"
               >
                 <Link2 size={18} />
               </a>
               <a
-                href="mailto:diaz@example.com"
+                href="https://substack.com/@growthdz"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-text-secondary hover:text-accent transition-colors"
-                aria-label="Email"
+                aria-label="Substack"
               >
                 <Mail size={18} />
+              </a>
+              <a
+                href="https://wa.me/6283179524847"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-text-secondary hover:text-accent transition-colors"
+                aria-label="WhatsApp"
+              >
+                <MessageCircle size={18} />
               </a>
             </div>
           </div>
@@ -76,7 +88,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-border-subtle flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-xs text-text-muted">
-            © {new Date().getFullYear()} Muhammad Diaz Rahardi Putra. Built with intention.
+            © {new Date().getFullYear()} Muhammad Diaz Rahardi Putra. Dibangun dengan niat.
           </p>
           <p className="text-xs text-text-muted font-mono">
             Next.js · TypeScript · Tailwind · Framer Motion

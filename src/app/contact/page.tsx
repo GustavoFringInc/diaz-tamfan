@@ -4,33 +4,32 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import RevealText from "@/components/motion/RevealText";
-import MagneticButton from "@/components/motion/MagneticButton";
-import { Mail, Globe, Link2, Camera, ArrowUpRight } from "lucide-react";
+import { Mail, Globe, Link2, MessageCircle, ArrowUpRight } from "lucide-react";
 
 const links = [
   {
-    icon: Mail,
-    label: "Email",
-    value: "diaz@example.com",
-    href: "mailto:diaz@example.com",
+    icon: MessageCircle,
+    label: "WhatsApp",
+    value: "0831-7952-4847",
+    href: "https://wa.me/6283179524847",
   },
   {
     icon: Globe,
     label: "GitHub",
-    value: "@diazrahardi",
-    href: "https://github.com/diazrahardi",
+    value: "GustavoFringInc",
+    href: "https://github.com/GustavoFringInc",
   },
   {
     icon: Link2,
-    label: "LinkedIn",
-    value: "Diaz Rahardi",
-    href: "https://linkedin.com/in/diazrahardi",
+    label: "Instagram",
+    value: "@growthdz",
+    href: "https://instagram.com/growthdz",
   },
   {
-    icon: Camera,
-    label: "Instagram",
-    value: "@diazrahardi",
-    href: "https://instagram.com/diazrahardi",
+    icon: Mail,
+    label: "Substack",
+    value: "@growthdz",
+    href: "https://substack.com/@growthdz",
   },
 ];
 
@@ -45,13 +44,13 @@ export default function ContactPage() {
               as="h1"
               className="font-display text-4xl md:text-5xl font-bold tracking-tight mb-4"
             >
-              Let's talk
+              Ayo ngobrol
             </RevealText>
             <RevealText delay={0.1} className="text-text-secondary mb-16 max-w-xl">
               <p>
-                I'm always open to conversations about AI products, education
-                technology, design, or interesting problems worth solving. No forms
-                — just direct contact.
+                Aku selalu terbuka buat ngobrol soal produk AI, education technology, 
+                desain, atau masalah menarik yang layak diselesaikan. Gak pake form — 
+                langsung kontak aja.
               </p>
             </RevealText>
 
@@ -88,13 +87,13 @@ export default function ContactPage() {
             <RevealText delay={0.3}>
               <div className="p-6 border border-border-subtle rounded-md bg-bg-surface">
                 <h2 className="font-display text-lg font-semibold mb-2">
-                  Open to
+                  Terbuka buat
                 </h2>
                 <ul className="space-y-2 text-sm text-text-secondary">
-                  <li>→ Collaboration on AI products and education technology</li>
-                  <li>→ Speaking engagements and workshops</li>
-                  <li>→ Consulting on product architecture and design systems</li>
-                  <li>→ Interesting conversations — no agenda needed</li>
+                  <li>→ Kolaborasi di produk AI dan education technology</li>
+                  <li>→ Ngobrol soal AI workflow dan produktivitas</li>
+                  <li>→ Konsultasi product architecture dan design systems</li>
+                  <li>→ Obrolan menarik — gak perlu agenda khusus</li>
                 </ul>
               </div>
             </RevealText>

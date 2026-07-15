@@ -4,7 +4,6 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import SmoothScroll from "@/components/layout/SmoothScroll";
 import RevealText from "@/components/motion/RevealText";
-import StaggerGrid from "@/components/motion/StaggerGrid";
 import { projects } from "@/data/projects";
 import { ExternalLink } from "lucide-react";
 
@@ -23,9 +22,9 @@ export default function ProjectsPage() {
             </RevealText>
             <RevealText delay={0.1} className="text-text-secondary mb-16 max-w-2xl">
               <p>
-                Each project starts with a question. Here are the answers I've
-                built so far — products, experiments, and systems that explore what
-                AI, design, and code can do together.
+                Tiap project mulai dari pertanyaan. Ini jawaban-jawaban yang udah 
+                aku bangun sejauh ini — produk, eksperimen, dan sistem yang explore 
+                apa yang bisa dilakuin AI, desain, dan kode bareng-bareng.
               </p>
             </RevealText>
 
@@ -53,7 +52,7 @@ export default function ProjectsPage() {
                               : "bg-blue-500/10 text-blue-400"
                           }`}
                         >
-                          {project.status}
+                          {project.status === "active" ? "aktif" : project.status === "experiment" ? "eksperimen" : "selesai"}
                         </span>
                       </div>
                     </div>
@@ -79,7 +78,7 @@ export default function ProjectsPage() {
                           rel="noopener noreferrer"
                           className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-1"
                         >
-                          Visit project <ExternalLink size={14} />
+                          Kunjungi project <ExternalLink size={14} />
                         </a>
                       )}
                     </div>

@@ -10,81 +10,105 @@ export interface JournalPost {
 
 export const journalPosts: JournalPost[] = [
   {
-    slug: "thinking-in-systems",
-    title: "Thinking in Systems: Why I Build Products, Not Features",
+    slug: "mikir-dalam-sistem",
+    title: "Mikir dalam Sistem: Kenapa Aku Build Produk, Bukan Fitur",
     excerpt:
-      "The difference between a feature and a product is not code — it's intention. Here's how I approach building things that matter.",
-    content: `The difference between a feature and a product is not code. It's intention.
+      "Bedanya fitur sama produk itu bukan di kode — tapi di niat. Ini cara aku pendekatan bikin sesuatu yang beneran berguna.",
+    content: `Bedanya fitur sama produk itu bukan di kode. Tapi di niat.
 
-When I started building SMANSO.AI, my first instinct was to add more features. More quiz types. More subjects. More gamification. The list grew quickly, and the product felt heavier with each addition.
+Waktu awal-awal bikin SMANSO.AI, instinct pertamaku itu nambah fitur. Lebih banyak tipe quiz. Lebih banyak mapel. Lebih banyak gamification. Daftarnya panjang banget, dan produknya kerasa makin berat tiap nambah satu.
 
-Then I stopped and asked: what problem am I actually solving?
+Terus aku stop dan nanya ke diri sendiri: masalah apa yang sebenernya mau aku selesain?
 
-The answer was simple: Indonesian students need learning that feels personal, not industrial. Every feature after that was filtered through this lens. If it didn't make learning feel more personal, it didn't ship.
+Jawabannya simpel: siswa Indonesia butuh belajar yang kerasa personal, bukan industrial. Semua fitur setelah itu di-filter lewat lens ini. Kalau gak bikin belajar kerasa lebih personal, gak ship.
 
-This is what I mean by thinking in systems. A system has a purpose. Features without a system are just noise.
+Ini yang aku maksud sama mikir dalam sistem. Sistem punya tujuan. Fitur tanpa sistem itu cuma noise.
 
-I've started applying this to everything I build. Before writing code, I ask:
-- What is this product's purpose?
-- What is the simplest system that serves that purpose?
-- What can I remove without losing the essence?
+Aku mulai terapin ini ke semua yang aku bangun. Sebelum nulis kode, aku tanya:
+- Apa tujuan produk ini?
+- Sistem paling simpel yang serve tujuan itu apa?
+- Apa yang bisa aku buang tanpa kehilangan esensinya?
 
-The best products I use daily are built this way. Linear, Notion, Arc browser — they all feel like systems with clear purposes, not feature collections.
+Produk-produk terbaik yang aku pakai tiap hari dibangun kayak gini. Linear, Notion, Arc browser — semuanya kerasa kayak sistem dengan tujuan jelas, bukan kumpulan fitur.
 
-That's the standard I hold myself to. Not perfection, but clarity.`,
+Itu standar yang aku pegang. Bukan perfection, tapi clarity.`,
     date: "2024-12-15",
-    tags: ["product-thinking", "systems", "philosophy"],
-    readingTime: "4 min",
+    tags: ["product-thinking", "sistem", "filosofi"],
+    readingTime: "4 menit",
   },
   {
-    slug: "ai-as-co-architect",
-    title: "AI as Co-Architect: How I Work with LLMs",
+    slug: "ai-sebagai-co-architect",
+    title: "AI sebagai Co-Architect: Cara Aku Kerja bareng LLM",
     excerpt:
-      "I don't use AI to write code for me. I use it to think with me. Here's my process for collaborating with language models.",
-    content: `I don't use AI to write code for me. I use it to think with me.
+      "Aku gak pakai AI buat nulis kode buatku. Aku pakai buat mikir bareng aku. Ini prosesku kolaborasi sama language model.",
+    content: `Aku gak pakai AI buat nulis kode buatku. Aku pakai buat mikir bareng aku.
 
-There's a common misconception that AI coding tools make you lazy. In my experience, the opposite is true — if you use them correctly.
+Ada miskonsepsi umum kalau AI coding tools bikin kamu males. Dari pengalamanku, justru sebaliknya — kalau kamu pakainya bener.
 
-My process looks like this:
+Prosesku kayak gini:
 
-1. I write a detailed prompt that explains the architecture, not just the task.
-2. I review every suggestion critically, asking "why this approach?"
-3. I iterate — sometimes 10+ rounds — until the solution feels right.
-4. I document the decisions in SKILL.md files for future reference.
+1. Aku tulis prompt detail yang jelasin arsitekturnya, bukan cuma task-nya.
+2. Aku review setiap saran secara kritis, tanya "kenapa pendekatan ini?"
+3. Aku iterate — kadang 10+ ronde — sampai solusinya kerasa bener.
+4. Aku dokumentasiin keputusannya di file SKILL.md buat referensi masa depan.
 
-The key is that I remain the architect. AI is the builder. I decide the blueprint, AI helps me construct it faster.
+Kuncinya itu aku tetep jadi arsitek. AI itu buildernya. Aku yang mutusin blueprint, AI bantu aku construct lebih cepet.
 
-This approach has fundamentally changed how I work. I can now prototype in hours what used to take days, but the quality bar hasn't dropped. If anything, it's higher — because I have more time to think about design and less time debugging boilerplate.
+Pendekatan ini fundamentally ngubah cara aku kerja. Sekarang aku bisa prototype dalam hitungan jam yang dulu butuh berhari-hari, tapi quality bar-nya gak turun. Malah lebih tinggi — karena aku punya lebih banyak waktu buat mikirin desain dan lebih sedikit waktu debugging boilerplate.
 
-The future of software development isn't AI replacing developers. It's developers with AI becoming architects of increasingly complex systems.`,
+Masa depan software development itu bukan AI gantiin developer. Tapi developer pakai AI jadi arsitek dari sistem yang makin kompleks. Dan menurutku itu exciting, bukan threatening.`,
     date: "2024-11-28",
     tags: ["AI", "workflow", "development"],
-    readingTime: "5 min",
+    readingTime: "5 menit",
   },
   {
-    slug: "quiet-confidence-in-design",
-    title: "Quiet Confidence in Design",
+    slug: "quiet-confidence-dalam-desain",
+    title: "Quiet Confidence dalam Desain",
     excerpt:
-      "The best interfaces don't scream for attention. They earn trust through precision, restraint, and respect for the user's time.",
-    content: `The best interfaces I've ever used share one quality: they don't try to impress me.
+      "Interface terbaik gak teriak minta perhatian. Mereka earn trust lewat presisi, restraint, dan respect sama waktu user.",
+    content: `Interface terbaik yang pernah aku pakai punya satu kualitas: mereka gak coba impress aku.
 
-Linear doesn't animate everything. Notion doesn't use gradients. Apple's documentation doesn't have flashy illustrations. They all feel confident — not in a loud way, but in a quiet, "I know what I'm doing" way.
+Linear gak animate semua hal. Notion gak pakai gradient. Dokumentasi Apple gak punya ilustrasi flashy. Mereka semua kerasa confident — bukan yang loud, tapi yang quiet, "aku tau yang aku lakuin" vibe.
 
-I call this quiet confidence in design. It's characterized by:
+Aku sebut ini quiet confidence dalam desain. Karakteristiknya:
 
-**Restraint.** Not every element needs to move. Not every surface needs decoration.
+**Restraint.** Gak semua elemen perlu gerak. Gak semua permukaan perlu dekorasi.
 
-**Precision.** Every pixel has a reason. Spacing is mathematical. Typography is intentional.
+**Presisi.** Tiap pixel punya alasan. Spacing itu mathematical. Typography itu intentional.
 
-**Respect.** The user's time is valued. Information hierarchy is clear. Actions are predictable.
+**Respect.** Waktu user di-value. Information hierarchy jelas. Actions predictable.
 
-When I design, I ask myself: does this element earn its place? If I remove it, does the interface lose meaning? If the answer is no, it goes.
+Waktu aku desain, aku tanya diri sendiri: elemen ini earn tempatnya gak? Kalau aku buang, interface-nya kehilangan makna gak? Kalau jawabannya enggak, ya buang.
 
-This philosophy extends to code, too. Clean architecture, clear naming, minimal abstractions — all forms of quiet confidence in engineering.
+Filosofi ini extend ke kode juga. Clean architecture, clear naming, minimal abstractions — semua itu bentuk quiet confidence dalam engineering.
 
-The goal isn't minimalism for its own sake. It's clarity. And clarity is the ultimate form of sophistication.`,
+Tujuannya bukan minimalis buat minimalis. Tapi clarity. Dan clarity itu ultimate form of sophistication.`,
     date: "2024-11-10",
-    tags: ["design", "philosophy", "UI"],
-    readingTime: "3 min",
+    tags: ["desain", "filosofi", "UI"],
+    readingTime: "3 menit",
+  },
+  {
+    slug: "ai-buat-produktivitas-nyata",
+    title: "AI Buat Produktivitas Nyata, Bukan Demo",
+    excerpt:
+      "Banyak yang pakai AI cuma buat bikin demo keren. Tapi yang beneran ngubah hidup itu waktu AI jadi bagian dari workflow harian kamu.",
+    content: `Jujur aja, aku mulai bosen lihat orang pamer "AI project" yang sebenernya cuma demo. Chatbot yang jawab pertanyaan random. Image generator yang bikin foto lucu. Cool, tapi after what?
+
+Yang beneran ngubah cara aku kerja itu waktu AI jadi bagian dari workflow harian. Bukan project terpisah yang aku buka sekali-sekali, tapi tool yang aku pakai setiap hari buat mikir lebih cepet dan lebih dalam.
+
+Contoh konkret:
+
+Aku pakai AI buat brainstorm. Bukan buat generate ide final, tapi buat expand kemungkinan. "Kalau aku bikin X, apa aja konsekuensinya?" AI bagus banget buat explore angle yang belum kepikiran.
+
+Aku pakai AI buat writing. Bukan buat nulis artikel final, tapi buat outline, buat cek clarity, buat nemuin blind spot. Hasil akhirnya tetep aku yang nulis, tapi prosesnya lebih cepet dan lebih tajam.
+
+Aku pakai AI buat coding. Tapi bukan buat nulis semua kode — buat generate boilerplate, buat review logic, buat nemuin edge case yang aku miss.
+
+Pattern-nya sama: AI augment, bukan replace. Aku tetep di driver seat, AI bantu aku navigate lebih baik.
+
+Ini yang aku mau share lewat portfolio ini. Bukan "lihat project AI keren yang aku bikin", tapi "ini cara AI bikin aku lebih produktif, dan kamu bisa juga".`,
+    date: "2024-10-22",
+    tags: ["AI", "produktivitas", "workflow"],
+    readingTime: "4 menit",
   },
 ];

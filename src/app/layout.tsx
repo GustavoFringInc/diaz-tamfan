@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Diaz Rahardi — AI Product Builder",
   description:
-    "Portfolio of Muhammad Diaz Rahardi Putra — AI Product Builder who orchestrates AI, design, and systems into complete products.",
+    "Portfolio Muhammad Diaz Rahardi Putra — AI Product Builder yang bantu orang mikir dan kerja lebih baik pakai AI. Bukan cuma bikin produk, tapi bikin sistem yang hidup.",
   keywords: [
     "Diaz Rahardi",
     "AI Product Builder",
@@ -12,12 +12,13 @@ export const metadata: Metadata = {
     "Indonesia",
     "Next.js",
     "Artificial Intelligence",
+    "Education Technology",
   ],
   authors: [{ name: "Muhammad Diaz Rahardi Putra" }],
   openGraph: {
     title: "Diaz Rahardi — AI Product Builder",
     description:
-      "Building digital products that combine AI, thoughtful design, and meaningful user experiences.",
+      "Bantu orang mikir dan kerja lebih baik pakai AI. Bangun produk digital yang combine teknologi, desain, dan meaningful user experience.",
     type: "website",
     locale: "id_ID",
   },
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Diaz Rahardi — AI Product Builder",
     description:
-      "Building digital products that combine AI, thoughtful design, and meaningful user experiences.",
+      "Bantu orang mikir dan kerja lebih baik pakai AI. Bangun produk digital yang combine teknologi, desain, dan meaningful user experience.",
   },
 };
 
@@ -35,7 +36,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="id">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

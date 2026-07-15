@@ -20,7 +20,7 @@ export default function NowPage() {
             </RevealText>
             <RevealText delay={0.1} className="text-text-secondary mb-12">
               <p>
-                What I'm focused on right now. Inspired by{" "}
+                Lagi fokus ngapain sekarang. Terinspirasi dari{" "}
                 <a
                   href="https://nownownow.com"
                   target="_blank"
@@ -29,7 +29,7 @@ export default function NowPage() {
                 >
                   nownownow.com
                 </a>
-                . Last updated: July 2026.
+                . Terakhir update: Juli 2026.
               </p>
             </RevealText>
 
@@ -38,17 +38,17 @@ export default function NowPage() {
                 <div>
                   <h2 className="font-display text-xl font-semibold mb-3 flex items-center gap-2">
                     <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse-slow"></span>
-                    Building
+                    Lagi bangun
                   </h2>
                   <ul className="space-y-2 text-text-secondary text-sm leading-relaxed">
                     <li>
-                      → Scaling <strong className="text-text-primary">SMANSO.AI</strong> — adding new AI tutoring features and expanding subject coverage.
+                      → Scale-up <strong className="text-text-primary">SMANSO.AI</strong> — nambah fitur AI tutoring baru dan expand coverage mapel.
                     </li>
                     <li>
-                      → Working on <strong className="text-text-primary">Yapping.ai</strong> — refining AI personalities and conversational depth.
+                      → Ngulik <strong className="text-text-primary">Yapping.ai</strong> — refine AI personalities dan conversational depth.
                     </li>
                     <li>
-                      → Experimenting with <strong className="text-text-primary">Sora Loka</strong> — exploring offline P2P communication protocols.
+                      → Eksperimen sama <strong className="text-text-primary">Sora Loka</strong> — explore protokol komunikasi P2P offline.
                     </li>
                   </ul>
                 </div>
@@ -57,13 +57,13 @@ export default function NowPage() {
               <RevealText delay={0.2}>
                 <div>
                   <h2 className="font-display text-xl font-semibold mb-3">
-                    Learning
+                    Lagi belajar
                   </h2>
                   <ul className="space-y-2 text-text-secondary text-sm leading-relaxed">
-                    <li>→ Deep dive into AI agents and agentic workflows.</li>
-                    <li>→ Studying system design and distributed architectures.</li>
-                    <li>→ Reading about philosophy of mind and human-computer interaction.</li>
-                    <li>→ Exploring local LLM deployment and edge computing.</li>
+                    <li>→ Deep dive ke AI agents dan agentic workflows.</li>
+                    <li>→ Studi system design dan distributed architectures.</li>
+                    <li>→ Baca soal philosophy of mind dan human-computer interaction.</li>
+                    <li>→ Explore local LLM deployment dan edge computing.</li>
                   </ul>
                 </div>
               </RevealText>
@@ -71,12 +71,12 @@ export default function NowPage() {
               <RevealText delay={0.25}>
                 <div>
                   <h2 className="font-display text-xl font-semibold mb-3">
-                    Reading
+                    Lagi baca
                   </h2>
                   <ul className="space-y-2 text-text-secondary text-sm leading-relaxed">
-                    <li>→ <em>"Thinking in Systems"</em> by Donella Meadows</li>
-                    <li>→ <em>"The Design of Everyday Things"</em> by Don Norman</li>
-                    <li>→ Various essays on AI alignment and product philosophy.</li>
+                    <li>→ <em>"Thinking in Systems"</em> — Donella Meadows</li>
+                    <li>→ <em>"The Design of Everyday Things"</em> — Don Norman</li>
+                    <li>→ Various essays soal AI alignment dan product philosophy.</li>
                   </ul>
                 </div>
               </RevealText>
@@ -84,13 +84,13 @@ export default function NowPage() {
               <RevealText delay={0.3}>
                 <div>
                   <h2 className="font-display text-xl font-semibold mb-3">
-                    Thinking about
+                    Lagi mikirin
                   </h2>
                   <ul className="space-y-2 text-text-secondary text-sm leading-relaxed">
-                    <li>→ How to make AI more accessible for non-technical users.</li>
-                    <li>→ The intersection of education technology and AI.</li>
-                    <li>→ Building sustainable software businesses in Southeast Asia.</li>
-                    <li>→ The future of knowledge management and second-brain systems.</li>
+                    <li>→ Gimana caranya bikin AI lebih accessible buat orang non-teknis.</li>
+                    <li>→ Intersection antara education technology dan AI.</li>
+                    <li>→ Bangun software business yang sustainable di Asia Tenggara.</li>
+                    <li>→ Masa depan knowledge management dan second-brain systems.</li>
                   </ul>
                 </div>
               </RevealText>

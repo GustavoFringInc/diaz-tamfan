@@ -29,8 +29,8 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="font-display text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6"
         >
-          Building products that{" "}
-          <span className="text-gradient">think</span>
+          Bantu orang mikir lebih baik{" "}
+          <span className="text-gradient">pakai AI</span>
         </motion.h1>
 
         <motion.div
@@ -41,10 +41,10 @@ export default function Hero() {
         >
           <TypingEffect
             texts={[
-              "AI should help humans think, not replace them.",
-              "Simplicity wins.",
-              "Design is communication.",
-              "Build things people actually need.",
+              "AI itu alat bantu mikir, bukan pengganti.",
+              "Yang simpel biasanya yang menang.",
+              "Desain itu komunikasi, bukan dekorasi.",
+              "Bikin yang emang dibutuhin orang.",
             ]}
           />
         </motion.div>
@@ -56,10 +56,10 @@ export default function Hero() {
           className="flex flex-col sm:flex-row gap-4 justify-center"
         >
           <MagneticButton href="/projects">
-            View Projects
+            Lihat Projects
           </MagneticButton>
           <MagneticButton href="/contact" variant="secondary">
-            Get in Touch
+            Hubungi Aku
           </MagneticButton>
         </motion.div>
 

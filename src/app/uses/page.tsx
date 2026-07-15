@@ -7,54 +7,26 @@ import RevealText from "@/components/motion/RevealText";
 import Terminal from "@/components/motion/Terminal";
 import SectionLabel from "@/components/ui/SectionLabel";
 
-const categories = [
-  {
-    title: "Hardware",
-    items: [
-      { name: "Laptop utama", desc: "Mesin Linux pake GXDE OS" },
-      { name: "HP Android", desc: "Jalanin GXDE OS — karena kenapa enggak" },
-      { name: "Keyboard", desc: "Mechanical, tactile switches, layout minimalis" },
-    ],
-  },
-  {
-    title: "Development",
-    items: [
-      { name: "Editor", desc: "VS Code tema Gruvbox, extension seminimal mungkin" },
-      { name: "Terminal", desc: "Zsh + Starship prompt, config Gruvbox custom" },
-      { name: "Framework", desc: "Next.js (App Router) + TypeScript" },
-      { name: "Styling", desc: "Tailwind CSS — cepet tanpa kompromi" },
-      { name: "Database", desc: "Supabase (Postgres) + Drizzle ORM" },
-      { name: "Hosting", desc: "Vercel buat frontend, Supabase buat backend" },
-    ],
-  },
-  {
-    title: "AI Tools",
-    items: [
-      { name: "Cursor", desc: "AI-first code editor buat rapid prototyping" },
-      { name: "Claude", desc: "Deep thinking, arsitektur, dan dokumentasi" },
-      { name: "Gemini", desc: "Research, analisis long-context, tugas multimodal" },
-      { name: "v0 / Lovable", desc: "Rapid UI prototyping dan eksplorasi desain" },
-      { name: "Google Gemini API", desc: "Backbone AI utama buat kebanyakan produk" },
-      { name: "OpenAI API", desc: "Buat use case conversational tertentu" },
-    ],
-  },
-  {
-    title: "Desain",
-    items: [
-      { name: "Figma", desc: "UI design, prototyping, design systems" },
-      { name: "Font pair", desc: "Space Grotesk (display) + Inter (body) + JetBrains Mono" },
-      { name: "Color system", desc: "Gruvbox-inspired warm tones, desaturated buat web" },
-      { name: "Icon set", desc: "Lucide — clean, konsisten, minimal" },
-    ],
-  },
-  {
-    title: "Produktivitas",
-    items: [
-      { name: "Knowledge base", desc: "Sistem second-brain di Google Drive (ala Karpathy)" },
-      { name: "Notes", desc: "File Markdown, sync lintas device" },
-      { name: "Writing", desc: "MDX buat long-form, markdown biasa buat yang lain" },
-    ],
-  },
+const pcSetup = [
+  { name: "Perangkat Utama", desc: "Laptop Linux pake GXDE OS — ringan, custom, dan nggak ribet" },
+  { name: "Editor", desc: "VS Code tema Gruvbox, extension seminimal mungkin biar fokus" },
+  { name: "Browser", desc: "Firefox buat development, Arc buat research dan browsing" },
+  { name: "Terminal", desc: "Zsh + Starship prompt, config Gruvbox custom" },
+  { name: "Framework", desc: "Next.js (App Router) + TypeScript — standar yang aku percaya" },
+  { name: "Styling", desc: "Tailwind CSS — cepet tanpa kompromi" },
+  { name: "Database", desc: "Supabase (Postgres) + Drizzle ORM" },
+  { name: "Hosting", desc: "Vercel buat frontend, Supabase buat backend" },
+  { name: "AI Tools", desc: "Cursor, Claude, Gemini, v0/Lovable — co-pilots yang bikin kerja ngebut" },
+  { name: "Workflow", desc: "Iteratif dan dialogis — nulis prompt panjang, refine, dokumentasiin di SKILL.md" },
+];
+
+const mobileSetup = [
+  { name: "Smartphone", desc: "Android yang jalanin GXDE OS — karena kenapa enggak" },
+  { name: "AI Mobile", desc: "Gemini app, ChatGPT — buat quick thinking on the go" },
+  { name: "Aplikasi Favorit", desc: "Telegram, Notion, Kindle — tiga itu yang paling sering dibuka" },
+  { name: "Produktivitas", desc: "Markdown notes sync lintas device, second-brain di Google Drive" },
+  { name: "Tools Harian", desc: "Calendar, task manager simpel, dan reading app" },
+  { name: "Eksperimen", desc: "Kadang HP dipakai buat testing responsive design langsung di device" },
 ];
 
 export default function UsesPage() {
@@ -75,9 +47,9 @@ export default function UsesPage() {
             </RevealText>
             <RevealText delay={0.1} className="text-text-secondary mb-20 max-w-2xl">
               <p>
-                Tools, setup, dan stack yang aku pakai setiap hari. Semua dipilih 
-                buat kecepatan, kejelasan, dan maintainability jangka panjang. 
-                Bukan yang paling hype — yang paling cocok.
+                Semua dipilih buat kecepatan, kejelasan, dan maintainability 
+                jangka panjang. Bukan yang paling hype — yang paling cocok. 
+                Dua device utama: laptop dan HP.
               </p>
             </RevealText>
 
@@ -88,38 +60,45 @@ export default function UsesPage() {
               </div>
             </RevealText>
 
-            {/* Categories */}
-            <div className="space-y-16">
-              {categories.map((cat, i) => (
-                <RevealText key={cat.title} delay={0.04 * i}>
-                  <div>
-                    <div className="flex items-center gap-3 mb-6 pb-3 border-b border-border-subtle">
-                      <span className="font-mono text-[10px] text-blueprint/60">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <h2 className="font-display text-xl font-bold">
-                        {cat.title}
-                      </h2>
+            {/* PC */}
+            <RevealText delay={0.2}>
+              <div className="mb-16">
+                <div className="flex items-center gap-3 mb-6 pb-3 border-b border-border-subtle">
+                  <span className="font-mono text-[10px] text-blueprint/60">01</span>
+                  <h2 className="font-display text-2xl font-bold">PC / Laptop</h2>
+                </div>
+                <div className="grid md:grid-cols-2 gap-3">
+                  {pcSetup.map((item) => (
+                    <div key={item.name} className="paper-card p-5 rounded-sm">
+                      <div className="font-mono text-[9px] text-blueprint/50 uppercase tracking-wider mb-1.5">
+                        {item.name}
+                      </div>
+                      <div className="text-sm text-text-secondary">{item.desc}</div>
                     </div>
-                    <div className="grid md:grid-cols-2 gap-4">
-                      {cat.items.map((item) => (
-                        <div
-                          key={item.name}
-                          className="paper-card p-5 rounded-sm"
-                        >
-                          <div className="font-medium text-sm mb-1">
-                            {item.name}
-                          </div>
-                          <div className="text-xs text-text-muted">
-                            {item.desc}
-                          </div>
-                        </div>
-                      ))}
+                  ))}
+                </div>
+              </div>
+            </RevealText>
+
+            {/* HP */}
+            <RevealText delay={0.25}>
+              <div>
+                <div className="flex items-center gap-3 mb-6 pb-3 border-b border-border-subtle">
+                  <span className="font-mono text-[10px] text-blueprint/60">02</span>
+                  <h2 className="font-display text-2xl font-bold">HP / Smartphone</h2>
+                </div>
+                <div className="grid md:grid-cols-2 gap-3">
+                  {mobileSetup.map((item) => (
+                    <div key={item.name} className="paper-card p-5 rounded-sm">
+                      <div className="font-mono text-[9px] text-blueprint/50 uppercase tracking-wider mb-1.5">
+                        {item.name}
+                      </div>
+                      <div className="text-sm text-text-secondary">{item.desc}</div>
                     </div>
-                  </div>
-                </RevealText>
-              ))}
-            </div>
+                  ))}
+                </div>
+              </div>
+            </RevealText>
           </div>
         </section>
       </main>

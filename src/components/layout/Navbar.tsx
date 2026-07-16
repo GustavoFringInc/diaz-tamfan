@@ -21,15 +21,14 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-nav">
       <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
-        <Link 
-          href="/" 
+        <Link
+          href="/"
           className="font-display font-semibold text-base tracking-tight hover:text-accent transition-colors flex items-center gap-2"
         >
           <span className="w-2 h-2 rounded-full bg-accent inline-block" />
           diaz rahardi
         </Link>
 
-        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-6">
           {links.map((link) => (
             <Link
@@ -42,7 +41,6 @@ export default function Navbar() {
           ))}
         </div>
 
-        {/* Mobile menu button */}
         <button
           onClick={() => setMobileOpen(!mobileOpen)}
           className="md:hidden text-text-secondary hover:text-text-primary transition-colors"
@@ -52,7 +50,6 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile menu */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div

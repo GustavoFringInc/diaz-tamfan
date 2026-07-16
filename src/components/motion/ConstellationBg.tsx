@@ -54,9 +54,8 @@ export default function ConstellationBg() {
         if (node.y < 0 || node.y > h) node.vy *= -1;
       }
 
-      // Draw connections
       const maxDistance = 100;
-      ctx.strokeStyle = "rgba(194, 65, 12, 0.12)";
+      ctx.strokeStyle = "rgba(232, 169, 72, 0.1)";
       ctx.lineWidth = 0.5;
       for (let i = 0; i < nodes.length; i++) {
         for (let j = i + 1; j < nodes.length; j++) {
@@ -73,8 +72,7 @@ export default function ConstellationBg() {
         }
       }
 
-      // Draw nodes
-      ctx.fillStyle = "rgba(194, 65, 12, 0.5)";
+      ctx.fillStyle = "rgba(232, 169, 72, 0.4)";
       ctx.globalAlpha = 1;
       for (const node of nodes) {
         ctx.beginPath();

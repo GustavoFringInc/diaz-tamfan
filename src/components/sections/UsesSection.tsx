@@ -4,6 +4,7 @@ import RevealText from "@/components/motion/RevealText";
 import SectionLabel from "@/components/ui/SectionLabel";
 import Terminal from "@/components/motion/Terminal";
 import Link from "next/link";
+import { motion } from "framer-motion";
 
 const pcSetup = [
   { name: "OS", desc: "GXDE Linux" },
@@ -32,7 +33,7 @@ export default function UsesSection() {
         <SectionLabel number="07" label="Alat Perang" />
 
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
-          {/* Left editorial */}
+          {/* Left */}
           <div className="lg:col-span-5">
             <RevealText>
               <h2 className="font-editorial text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] mb-6">
@@ -42,37 +43,39 @@ export default function UsesSection() {
             </RevealText>
             <RevealText delay={0.1}>
               <p className="text-text-secondary leading-relaxed mb-8">
-                Semua dipilih buat kecepatan, kejelasan, dan maintainability 
-                jangka panjang. Bukan yang paling hype — yang paling cocok.
+                Bukan yang paling hype — yang paling cocok.
               </p>
             </RevealText>
 
-            {/* Terminal preview */}
             <RevealText delay={0.15}>
               <Terminal />
             </RevealText>
           </div>
 
-          {/* Right - two categories */}
+          {/* Right */}
           <div className="lg:col-span-7 space-y-10">
             {/* PC */}
             <RevealText delay={0.1}>
               <div>
                 <div className="flex items-center gap-3 mb-5 pb-3 border-b border-border-subtle">
-                  <span className="font-mono text-[10px] text-blueprint/60">01</span>
+                  <span className="font-mono text-[10px] text-accent/60">01</span>
                   <h3 className="font-display font-bold text-lg">PC / Laptop</h3>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
-                  {pcSetup.map((item) => (
-                    <div
+                  {pcSetup.map((item, i) => (
+                    <motion.div
                       key={item.name}
-                      className="paper-card p-4 rounded-sm"
+                      initial={{ opacity: 0, y: 15, rotate: i % 2 === 0 ? -1 : 1 }}
+                      whileInView={{ opacity: 1, y: 0, rotate: i % 2 === 0 ? -0.5 : 0.5 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: i * 0.05 }}
+                      className="dark-card p-4 rounded-sm"
                     >
-                      <div className="font-mono text-[9px] text-blueprint/50 uppercase tracking-wider mb-1">
+                      <div className="font-mono text-[8px] text-accent/40 uppercase tracking-wider mb-1">
                         {item.name}
                       </div>
                       <div className="text-sm font-medium">{item.desc}</div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
@@ -82,26 +85,29 @@ export default function UsesSection() {
             <RevealText delay={0.2}>
               <div>
                 <div className="flex items-center gap-3 mb-5 pb-3 border-b border-border-subtle">
-                  <span className="font-mono text-[10px] text-blueprint/60">02</span>
+                  <span className="font-mono text-[10px] text-accent/60">02</span>
                   <h3 className="font-display font-bold text-lg">HP / Smartphone</h3>
                 </div>
                 <div className="grid grid-cols-2 gap-3">
-                  {mobileSetup.map((item) => (
-                    <div
+                  {mobileSetup.map((item, i) => (
+                    <motion.div
                       key={item.name}
-                      className="paper-card p-4 rounded-sm"
+                      initial={{ opacity: 0, y: 15, rotate: i % 2 === 0 ? 1 : -1 }}
+                      whileInView={{ opacity: 1, y: 0, rotate: i % 2 === 0 ? 0.5 : -0.5 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: i * 0.05 }}
+                      className="dark-card p-4 rounded-sm"
                     >
-                      <div className="font-mono text-[9px] text-blueprint/50 uppercase tracking-wider mb-1">
+                      <div className="font-mono text-[8px] text-accent/40 uppercase tracking-wider mb-1">
                         {item.name}
                       </div>
                       <div className="text-sm font-medium">{item.desc}</div>
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
             </RevealText>
 
-            {/* More link */}
             <RevealText delay={0.25}>
               <Link
                 href="/uses"

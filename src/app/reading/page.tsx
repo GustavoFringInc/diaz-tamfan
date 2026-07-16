@@ -6,7 +6,7 @@ import SmoothScroll from "@/components/layout/SmoothScroll";
 import RevealText from "@/components/motion/RevealText";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { nonFiction, fiction } from "@/data/reading";
-import { BookOpen } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function ReadingPage() {
   return (
@@ -26,49 +26,31 @@ export default function ReadingPage() {
             </RevealText>
             <RevealText delay={0.1} className="text-text-secondary mb-20 max-w-2xl">
               <p>
-                Buku-buku yang udah aku baca dan somehow ngubah cara aku mikir. 
-                Campuran antara non-fiksi berat sama fiksi yang bikin gak bisa tidur. 
-                Gak semuanya &ldquo;produktif&rdquo; — ada yang dibaca cuma karena penasaran.
+                Campuran non-fiksi berat dan fiksi yang bikin susah tidur. 
+                Nggak semuanya &ldquo;produktif&rdquo; — ada yang dibaca cuma karena penasaran.
               </p>
             </RevealText>
 
             {/* Non-fiksi */}
             <RevealText delay={0.15}>
-              <div className="mb-20">
-                <div className="flex items-center gap-3 mb-2">
-                  <BookOpen size={16} className="text-accent" />
-                  <h2 className="font-display text-2xl font-bold">Non-Fiksi</h2>
-                </div>
-                <p className="text-sm text-text-muted mb-8">
-                  buku-buku yang bikin mikir keras (dan kadang bikin pusing)
-                </p>
-                <div className="space-y-1">
+              <div className="mb-16">
+                <h2 className="font-display text-2xl font-bold mb-8 pb-3 border-b border-border-subtle">
+                  Non-Fiksi
+                </h2>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                   {nonFiction.map((book, i) => (
-                    <div
+                    <motion.div
                       key={book.title}
-                      className="group py-5 border-b border-border-subtle hover:bg-bg-surface/30 transition-colors px-4 -mx-4 rounded-sm"
+                      initial={{ opacity: 0, y: 20, rotate: (i % 3 - 1) * 2 }}
+                      whileInView={{ opacity: 1, y: 0, rotate: (i % 3 - 1) * 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: i * 0.04, type: "spring", stiffness: 120 }}
                     >
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="flex-1">
-                          <div className="flex items-center gap-3 mb-1">
-                            <span className="font-mono text-[10px] text-blueprint/50">
-                              {String(i + 1).padStart(2, "0")}
-                            </span>
-                            <h3 className="font-medium text-text-primary group-hover:text-accent transition-colors">
-                              {book.title}
-                            </h3>
-                          </div>
-                          <p className="text-xs text-text-muted pl-7">
-                            {book.author}
-                          </p>
-                        </div>
+                      <div className="ticket hover:border-accent/30 transition-colors">
+                        <h3 className="text-sm font-medium leading-snug">{book.title}</h3>
+                        <p className="text-[10px] text-text-muted mt-1">{book.author}</p>
                       </div>
-                      {book.note && (
-                        <p className="text-sm text-text-secondary mt-3 pl-7 italic">
-                          <span className="text-highlight">{book.note}</span>
-                        </p>
-                      )}
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
@@ -76,41 +58,24 @@ export default function ReadingPage() {
 
             {/* Fiksi */}
             <RevealText delay={0.2}>
-              <div className="mb-20">
-                <div className="flex items-center gap-3 mb-2">
-                  <BookOpen size={16} className="text-accent" />
-                  <h2 className="font-display text-2xl font-bold">Fiksi</h2>
-                </div>
-                <p className="text-sm text-text-muted mb-8">
-                  cerita-cerita yang nempel di kepala jauh setelah halaman terakhir
-                </p>
-                <div className="space-y-1">
+              <div className="mb-16">
+                <h2 className="font-display text-2xl font-bold mb-8 pb-3 border-b border-border-subtle">
+                  Fiksi
+                </h2>
+                <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                   {fiction.map((book, i) => (
-                    <div
+                    <motion.div
                       key={book.title}
-                      className="group py-5 border-b border-border-subtle hover:bg-bg-surface/30 transition-colors px-4 -mx-4 rounded-sm"
+                      initial={{ opacity: 0, y: 20, rotate: (i % 3 - 1) * 2 }}
+                      whileInView={{ opacity: 1, y: 0, rotate: (i % 3 - 1) * 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.4, delay: i * 0.04, type: "spring", stiffness: 120 }}
                     >
-                      <div className="flex items-start justify-between gap-4">
-                        <div className="flex-1">
-                          <div className="flex items-center gap-3 mb-1">
-                            <span className="font-mono text-[10px] text-blueprint/50">
-                              {String(i + 1).padStart(2, "0")}
-                            </span>
-                            <h3 className="font-medium text-text-primary group-hover:text-accent transition-colors">
-                              {book.title}
-                            </h3>
-                          </div>
-                          <p className="text-xs text-text-muted pl-7">
-                            {book.author}
-                          </p>
-                        </div>
+                      <div className="ticket hover:border-accent/30 transition-colors">
+                        <h3 className="text-sm font-medium leading-snug">{book.title}</h3>
+                        <p className="text-[10px] text-text-muted mt-1">{book.author}</p>
                       </div>
-                      {book.note && (
-                        <p className="text-sm text-text-secondary mt-3 pl-7 italic">
-                          <span className="text-highlight">{book.note}</span>
-                        </p>
-                      )}
-                    </div>
+                    </motion.div>
                   ))}
                 </div>
               </div>
@@ -119,9 +84,8 @@ export default function ReadingPage() {
             {/* Footer santai */}
             <RevealText delay={0.25}>
               <div className="text-center py-10 border-t border-border-subtle">
-                <p className="text-sm text-text-muted italic">
-                  masih banyak lagi sebenernya, cuma males masukin semua ke list. 
-                  nanti kalau rajin aku update.
+                <p className="font-hand text-xl text-text-muted">
+                  masih banyak lagi sebenernya, cuma males masukin semua ke list.
                 </p>
               </div>
             </RevealText>

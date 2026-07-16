@@ -3,9 +3,9 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import RevealText from "@/components/motion/RevealText";
-import StaggerGrid from "@/components/motion/StaggerGrid";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { projects } from "@/data/projects";
+import { motion } from "framer-motion";
 
 export default function FeaturedProjects() {
   const featured = projects.filter((p) => p.featured);
@@ -31,56 +31,62 @@ export default function FeaturedProjects() {
           </RevealText>
         </div>
 
-        <StaggerGrid className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featured.map((project) => (
-            <Link
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {featured.map((project, i) => (
+            <motion.div
               key={project.slug}
-              href={`/projects#${project.slug}`}
-              className="group block paper-card p-8 rounded-sm"
+              initial={{ opacity: 0, y: 30, rotate: i % 2 === 0 ? -2 : 2 }}
+              whileInView={{ opacity: 1, y: 0, rotate: i % 2 === 0 ? -1 : 1 }}
+              viewport={{ once: true, margin: "-60px" }}
+              transition={{ duration: 0.6, delay: i * 0.1, type: "spring", stiffness: 100 }}
             >
-              {/* Top annotation */}
-              <div className="flex items-center justify-between mb-6">
-                <span className="font-mono text-[10px] tracking-wider text-blueprint/60 uppercase">
-                  {project.category}
-                </span>
-                <span className="font-mono text-[10px] text-text-muted">
-                  {project.year}
-                </span>
-              </div>
+              <Link
+                href={`/projects#${project.slug}`}
+                className="group block dark-card p-6 rounded-sm relative"
+              >
+                {/* Tape decoration */}
+                <div className="absolute -top-2 left-6 washi-tape w-12 rotate-[-2deg]" />
 
-              {/* Title */}
-              <h3 className="font-display text-2xl font-bold mb-3 group-hover:text-accent transition-colors">
-                {project.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-sm text-text-secondary leading-relaxed mb-6">
-                {project.tagline}
-              </p>
-
-              {/* Tech tags */}
-              <div className="flex flex-wrap gap-2 mb-6">
-                {project.tech.slice(0, 3).map((t) => (
-                  <span
-                    key={t}
-                    className="text-[10px] font-mono px-2 py-1 rounded bg-bg-surface text-text-muted border border-border-subtle"
-                  >
-                    {t}
+                {/* Content */}
+                <div className="flex items-center justify-between mb-4 mt-2">
+                  <span className="font-mono text-[9px] text-accent/60 uppercase tracking-wider">
+                    {project.category}
                   </span>
-                ))}
-              </div>
+                  <span className="font-mono text-[9px] text-text-muted">
+                    {project.year}
+                  </span>
+                </div>
 
-              {/* Bottom line */}
-              <div className="flex items-center justify-between pt-4 border-t border-border-subtle">
-                <span className="text-xs text-text-muted">Baca studi kasus</span>
-                <ArrowUpRight
-                  size={14}
-                  className="text-text-muted group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
-                />
-              </div>
-            </Link>
+                <h3 className="font-display text-xl font-bold mb-2 group-hover:text-accent transition-colors">
+                  {project.title}
+                </h3>
+
+                <p className="text-sm text-text-secondary leading-relaxed mb-4">
+                  {project.tagline}
+                </p>
+
+                <div className="flex flex-wrap gap-1.5 mb-4">
+                  {project.tech.slice(0, 3).map((t) => (
+                    <span
+                      key={t}
+                      className="text-[9px] font-mono px-2 py-0.5 rounded bg-bg text-text-muted border border-border-subtle"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+
+                <div className="flex items-center justify-between pt-3 border-t border-border-subtle">
+                  <span className="text-[11px] text-text-muted">Baca cerita</span>
+                  <ArrowUpRight
+                    size={13}
+                    className="text-text-muted group-hover:text-accent group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all"
+                  />
+                </div>
+              </Link>
+            </motion.div>
           ))}
-        </StaggerGrid>
+        </div>
       </div>
     </section>
   );

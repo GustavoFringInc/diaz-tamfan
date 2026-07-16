@@ -3,6 +3,7 @@
 import RevealText from "@/components/motion/RevealText";
 import SectionLabel from "@/components/ui/SectionLabel";
 import { MessageCircle, Globe, Link2, Mail } from "lucide-react";
+import { motion } from "framer-motion";
 
 const links = [
   { icon: MessageCircle, label: "WhatsApp", value: "0831-7952-4847", href: "https://wa.me/6283179524847" },
@@ -25,43 +26,51 @@ export default function ContactSection() {
         </RevealText>
         <RevealText delay={0.1}>
           <p className="text-text-secondary max-w-lg mx-auto leading-relaxed mb-12">
-            Soal produk AI, education technology, atau hal menarik lainnya yang 
-            layak didiskusikan bareng. Nggak perlu formal, santai aja.
+            Soal produk AI, education technology, atau hal menarik lainnya. 
+            Nggak perlu formal.
           </p>
         </RevealText>
 
-        {/* Contact cards */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-3 max-w-2xl mx-auto mb-12">
+        {/* Contact cards with slight rotations */}
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-4 max-w-2xl mx-auto mb-12">
           {links.map((link, i) => (
-            <RevealText key={link.label} delay={0.05 * i}>
+            <motion.div
+              key={link.label}
+              initial={{ opacity: 0, y: 20, rotate: (i % 3 - 1) * 2 }}
+              whileInView={{ opacity: 1, y: 0, rotate: (i % 3 - 1) * 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: i * 0.08, type: "spring", stiffness: 120 }}
+            >
               <a
                 href={link.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group block p-4 paper-card rounded-sm text-center"
+                className="group block dark-card p-5 rounded-sm text-center relative"
               >
+                {/* Tape */}
+                {i % 2 === 0 && (
+                  <div className="absolute -top-2 left-1/2 -translate-x-1/2 washi-tape w-10 rotate-[-2deg]" />
+                )}
                 <link.icon
                   size={16}
-                  className="text-text-muted group-hover:text-accent transition-colors mx-auto mb-2"
+                  className="text-text-muted group-hover:text-accent transition-colors mx-auto mb-2 mt-1"
                 />
-                <div className="font-mono text-[9px] text-blueprint/50 uppercase tracking-wider mb-1">
+                <div className="font-mono text-[8px] text-accent/50 uppercase tracking-wider mb-1">
                   {link.label}
                 </div>
                 <div className="text-xs font-medium group-hover:text-accent transition-colors truncate">
                   {link.value}
                 </div>
               </a>
-            </RevealText>
+            </motion.div>
           ))}
         </div>
 
-        {/* Page ending annotation */}
+        {/* End marker */}
         <RevealText delay={0.3}>
           <div className="flex items-center justify-center gap-3 pt-8 border-t border-border-subtle max-w-xs mx-auto">
             <div className="w-8 h-px bg-border" />
-            <span className="font-mono text-[9px] text-text-muted/50 uppercase tracking-wider">
-              Akhir catatan
-            </span>
+            <span className="font-hand text-lg text-text-muted/50">akhir catatan</span>
             <div className="w-8 h-px bg-border" />
           </div>
         </RevealText>

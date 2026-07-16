@@ -15,38 +15,33 @@ export default function ProjectsPage() {
       <main className="pt-14">
         <section className="section-spacing px-6">
           <div className="max-w-5xl mx-auto">
-            <SectionLabel number="A" label="Semua Project" />
+            <SectionLabel number="A" label="Projects" />
 
-            <RevealText as="h1" className="font-editorial text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.05]">
-              Kalau penasaran saya lagi sibuk ngapain,{" "}
-              <span className="italic text-accent">mungkin ini bisa menjawab</span>.
-            </RevealText>
-            <RevealText delay={0.1} className="text-text-secondary mb-20 max-w-2xl">
-              <p>Tiap project mulai dari pertanyaan. Ada yang masih jalan, ada yang eksperimen, ada yang udah selesai.</p>
+            <RevealText as="h1" className="font-editorial text-5xl md:text-6xl font-bold tracking-tight mb-12 leading-[1.05]">
+              Semua project
             </RevealText>
 
             <div className="space-y-1">
               {projects.map((project, i) => (
                 <RevealText key={project.slug} delay={0.04 * i}>
-                  <article id={project.slug} className="group grid md:grid-cols-12 gap-6 py-10 border-b border-border-subtle first:border-t hover:bg-bg-surface/20 transition-colors px-4 -mx-4 rounded-sm">
+                  <article id={project.slug} className="group grid md:grid-cols-12 gap-6 py-8 border-b border-border-subtle first:border-t hover:bg-bg-surface/20 transition-colors px-4 -mx-4 rounded-sm">
                     <div className="md:col-span-3">
                       <div className="flex items-center gap-2 mb-2">
                         <span className="font-mono text-[10px] text-accent/40">{String(i + 1).padStart(2, "0")}</span>
                         <span className="w-1 h-1 rounded-full bg-border" />
                         <span className="font-mono text-[10px] text-accent/40 uppercase tracking-wider">{project.category}</span>
                       </div>
-                      <h2 className="font-display text-2xl font-bold group-hover:text-accent transition-colors">{project.title}</h2>
+                      <h2 className="font-display text-xl font-bold group-hover:text-accent transition-colors">{project.title}</h2>
                       <div className="flex items-center gap-2 mt-2">
                         <span className={`text-[10px] font-mono px-2 py-0.5 rounded-sm ${
                           project.status === "active" ? "bg-green-500/10 text-green-400" : project.status === "experiment" ? "bg-amber-500/10 text-amber-400" : "bg-blue-500/10 text-blue-400"
                         }`}>
                           {project.status === "active" ? "aktif" : project.status === "experiment" ? "eksperimen" : "selesai"}
                         </span>
-                        <span className="font-mono text-[10px] text-text-muted">{project.year}</span>
                       </div>
                     </div>
                     <div className="md:col-span-9">
-                      <p className="text-text-secondary leading-relaxed mb-4">{project.longDescription}</p>
+                      <p className="text-text-secondary text-sm leading-relaxed mb-3">{project.tagline}</p>
                       <div className="flex flex-wrap items-center gap-2">
                         {project.tech.map((t) => (
                           <span key={t} className="text-[10px] font-mono px-2 py-1 rounded-sm bg-bg-surface text-text-muted border border-border-subtle">{t}</span>

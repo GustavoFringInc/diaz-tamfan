@@ -5,36 +5,10 @@ import SectionLabel from "@/components/ui/SectionLabel";
 import { motion } from "framer-motion";
 
 const events = [
-  {
-    year: "2023",
-    title: "Mulai serius ngulik AI",
-    description: "Pertama kali nyobain ChatGPT dan langsung kepikiran bikin produk dari situ.",
-    tag: "awal",
-  },
-  {
-    year: "2024",
-    title: "Bangun SMANSO.AI",
-    description: "Platform belajar AI buat siswa Indonesia. Project pertama yang solve masalah nyata.",
-    tag: "produk",
-  },
-  {
-    year: "2024",
-    title: "Yapping.ai & AI Translate",
-    description: "Eksplorasi AI personality dan translation yang jaga tone.",
-    tag: "eksperimen",
-  },
-  {
-    year: "2025",
-    title: "Sora Loka, Growthdz, second-brain",
-    description: "P2P offline, marketplace digital, dan knowledge management system.",
-    tag: "sistem",
-  },
-  {
-    year: "2026",
-    title: "Fokus ke AI workflow & edukasi",
-    description: "Shift ke bantu orang pakai AI. Sharing workflow dan scale-up project.",
-    tag: "misi",
-  },
+  { year: "2023", title: "Mulai serius ngulik AI", tag: "awal" },
+  { year: "2024", title: "SMANSO.AI, Yapping.ai, AI Translate", tag: "produk" },
+  { year: "2025", title: "Sora Loka, Growthdz, second-brain", tag: "sistem" },
+  { year: "2026", title: "Fokus: AI workflow & edukasi", tag: "misi" },
 ];
 
 export default function Timeline() {
@@ -44,18 +18,12 @@ export default function Timeline() {
         <SectionLabel number="05" label="Perjalanan" />
 
         <RevealText>
-          <h2 className="font-editorial text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] mb-6">
+          <h2 className="font-editorial text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] mb-12">
             Dari iseng jadi{" "}
-            <span className="italic text-accent">sesuatu yang serius</span>.
+            <span className="italic text-accent">serius</span>.
           </h2>
         </RevealText>
-        <RevealText delay={0.1}>
-          <p className="text-text-secondary mb-16 max-w-xl leading-relaxed">
-            Nggak ada rencana besar di awal. Yang ada cuma rasa penasaran yang terus berlanjut.
-          </p>
-        </RevealText>
 
-        {/* Timeline with string/benang */}
         <div className="relative">
           {/* String line */}
           <svg className="absolute left-5 md:left-10 top-0 bottom-0 w-4" preserveAspectRatio="none">
@@ -70,11 +38,10 @@ export default function Timeline() {
             />
           </svg>
 
-          <div className="space-y-10">
+          <div className="space-y-8">
             {events.map((event, i) => (
               <RevealText key={i} delay={0.05 * i}>
                 <div className="relative pl-14 md:pl-24">
-                  {/* Node on string */}
                   <motion.div
                     className="absolute left-3 md:left-8 top-2 w-4 h-4 rounded-full border-2 border-accent bg-bg-surface"
                     initial={{ scale: 0 }}
@@ -88,11 +55,10 @@ export default function Timeline() {
                   </div>
 
                   <div className="dark-card p-5 rounded-sm relative">
-                    {/* Tape */}
                     {i % 2 === 0 && (
                       <div className="absolute -top-2 right-4 washi-tape w-10 rotate-[3deg]" />
                     )}
-                    <div className="flex items-start justify-between gap-4 mb-1.5">
+                    <div className="flex items-center justify-between gap-4">
                       <h3 className="font-display font-semibold text-base">
                         {event.title}
                       </h3>
@@ -100,24 +66,17 @@ export default function Timeline() {
                         {event.tag}
                       </span>
                     </div>
-                    <p className="text-sm text-text-secondary leading-relaxed">
-                      {event.description}
-                    </p>
                   </div>
                 </div>
               </RevealText>
             ))}
           </div>
 
-          {/* End marker */}
-          <div className="relative pl-14 md:pl-24 mt-10">
+          <div className="relative pl-14 md:pl-24 mt-8">
             <div className="absolute left-3 md:left-8 top-1 w-4 h-4 rounded-full bg-accent" />
             <div className="font-mono text-[11px] text-accent tracking-wider">
               sekarang
             </div>
-            <p className="text-sm text-text-muted mt-1 font-hand text-lg">
-              dan ceritanya masih berlanjut...
-            </p>
           </div>
         </div>
       </div>

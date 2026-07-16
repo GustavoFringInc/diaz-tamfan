@@ -15,45 +15,36 @@ export default function NowPage() {
           <div className="max-w-3xl mx-auto">
             <SectionLabel number="D" label="Now" />
 
-            <RevealText as="h1" className="font-editorial text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.05]">
-              Lagi sibuk ngapain{" "}<span className="italic text-accent">sekarang</span>?
-            </RevealText>
-            <RevealText delay={0.1} className="text-text-secondary mb-16">
-              <p>
-                Terinspirasi dari{" "}
-                <a href="https://nownownow.com" target="_blank" rel="noopener noreferrer" className="text-accent underline underline-offset-2">nownownow.com</a>. 
-                Diupdate berkala. Terakhir: Juli 2026.
-              </p>
+            <RevealText as="h1" className="font-editorial text-5xl md:text-6xl font-bold tracking-tight mb-12 leading-[1.05]">
+              Lagi ngapain sekarang
             </RevealText>
 
-            <div className="space-y-16">
+            <div className="space-y-12">
               {[
                 { title: "Lagi dibangun", items: [
-                  "Scale-up SMANSO.AI — fitur AI tutoring baru",
-                  "Ngulik Yapping.ai — refine AI personalities",
-                  "Eksperimen Sora Loka — P2P offline communication",
+                  "Scale-up SMANSO.AI",
+                  "Ngulik Yapping.ai",
+                  "Eksperimen Sora Loka",
                 ]},
                 { title: "Lagi dipelajari", items: [
-                  "AI agents dan agentic workflows",
-                  "System design dan distributed architectures",
-                  "Philosophy of mind dan HCI",
+                  "AI agents & agentic workflows",
+                  "System design",
                   "Local LLM deployment",
                 ]},
                 { title: "Lagi dibaca", items: [
-                  "Thinking in Systems — Donella Meadows",
-                  "The Design of Everyday Things — Don Norman",
-                  "Essays soal AI alignment",
+                  "Thinking in Systems — Meadows",
+                  "Design of Everyday Things — Norman",
                 ]},
                 { title: "Lagi dipikirin", items: [
-                  "Bikin AI lebih accessible buat non-teknis",
-                  "Intersection education tech + AI",
-                  "Sustainable software business di Asia Tenggara",
+                  "AI yang accessible buat non-teknis",
+                  "Education tech + AI",
+                  "Sustainable software business",
                 ]},
               ].map((section, si) => (
                 <RevealText key={section.title} delay={0.05 * si}>
                   <div>
-                    <h2 className="font-display text-xl font-bold mb-4">{section.title}</h2>
-                    <ul className="space-y-3 text-text-secondary text-sm leading-relaxed">
+                    <h2 className="font-display text-lg font-bold mb-3">{section.title}</h2>
+                    <ul className="space-y-2 text-text-secondary text-sm">
                       {section.items.map((item) => (
                         <li key={item} className="pl-4 border-l-2 border-border-subtle">{item}</li>
                       ))}
@@ -62,6 +53,14 @@ export default function NowPage() {
                 </RevealText>
               ))}
             </div>
+
+            <RevealText delay={0.3}>
+              <div className="mt-12 pt-6 border-t border-border-subtle">
+                <p className="text-xs text-text-muted font-mono">
+                  terakhir update: juli 2026 · terinspirasi dari nownownow.com
+                </p>
+              </div>
+            </RevealText>
           </div>
         </section>
       </main>

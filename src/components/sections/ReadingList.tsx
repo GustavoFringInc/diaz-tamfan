@@ -12,25 +12,14 @@ export default function ReadingList() {
   return (
     <section className="section-spacing px-6 relative">
       <div className="max-w-5xl mx-auto">
-        <SectionLabel number="04" label="Daftar Bacaan" />
+        <SectionLabel number="04" label="Reading" />
 
-        <div className="grid lg:grid-cols-12 gap-12 mb-12">
-          <div className="lg:col-span-6">
-            <RevealText>
-              <h2 className="font-editorial text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] mb-6">
-                Beberapa orang hobi koleksi sepatu.{" "}
-                <span className="italic text-accent">Saya malah hobi baca</span>.
-              </h2>
-            </RevealText>
-            <RevealText delay={0.1}>
-              <p className="text-text-secondary leading-relaxed">
-                Campuran non-fiksi berat dan fiksi yang bikin susah tidur.
-              </p>
-            </RevealText>
-          </div>
-        </div>
+        <RevealText>
+          <h2 className="font-editorial text-4xl md:text-5xl font-bold tracking-tight leading-[1.1] mb-10">
+            Yang lagi dan udah dibaca
+          </h2>
+        </RevealText>
 
-        {/* Book tickets grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {recentBooks.map((book, i) => (
             <motion.div
@@ -44,26 +33,18 @@ export default function ReadingList() {
                 <div className="font-mono text-[8px] text-accent/50 uppercase tracking-wider mb-1.5">
                   {nonFiction.includes(book) ? "non-fiksi" : "fiksi"}
                 </div>
-                <h3 className="text-sm font-medium leading-snug">
-                  {book.title}
-                </h3>
-                <p className="text-[10px] text-text-muted mt-1">
-                  {book.author}
-                </p>
+                <h3 className="text-sm font-medium leading-snug">{book.title}</h3>
+                <p className="text-[10px] text-text-muted mt-1">{book.author}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* More link */}
         <RevealText delay={0.3}>
-          <div className="mt-10 flex items-center gap-3">
+          <div className="mt-8 flex items-center gap-3">
             <div className="w-12 h-px bg-border" />
-            <Link
-              href="/reading"
-              className="text-sm text-text-secondary hover:text-accent transition-colors flex items-center gap-1"
-            >
-              Lihat daftar lengkap <span className="text-xs">→</span>
+            <Link href="/reading" className="text-sm text-text-secondary hover:text-accent transition-colors">
+              Lihat semua →
             </Link>
           </div>
         </RevealText>
